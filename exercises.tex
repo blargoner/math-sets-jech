@@ -3,6 +3,13 @@
 \documentclass[letterpaper,12pt]{article}
 \usepackage{amsmath,amssymb,amsthm,enumitem,fourier}
 
+\newcommand{\N}{\boldsymbol{N}}
+
+\newcommand{\union}{\cup}
+\newcommand{\sect}{\cap}
+
+\newcommand{\suc}[1]{#1\union\{#1\}}
+
 % Theorems
 \theoremstyle{definition}
 \newtheorem*{exer}{Exercise}
@@ -20,6 +27,42 @@
 
 \section*{Introduction}
 This document contains notes and exercises from~\cite{jech}.
+
+\section*{Chapter~1}
+\begin{exer}[2]
+There is no set~\(X\) such that \(P(X)\subset X\).
+\end{exer}
+\begin{proof}
+By the axiom of regularity~(1.8), \(X\)~is \(\in\)-minimal in~\(\{X\}\), so \(X\not\in X\) and hence \(P(X)\not\subset X\).
+\end{proof}
+
+\begin{exer}[3]
+If \(X\)~is inductive, then the set \(\{\,x\in X\mid x\subset X\,\}\) is inductive. Hence \(\N\)~is transitive and for each \(n\in\N\), \(n=\{\,m\in\N\mid m<n\,\}\).
+\end{exer}
+\begin{proof}
+Let \(S=\{\,x\in X\mid x\subset X\,\}\). By inductivity of~\(X\), \(\emptyset\in S\), and if \(x\in S\), then \(\suc{x}\in S\), so \(S\)~is inductive. Taking \(X=\N\), it follows that \(S=\N\) since \(\N\)~is the smallest inductive set. Hence \(n\in\N\) implies \(n\subset\N\), so \(\N\)~is transitive and \(n=\{\,m\in\N\mid m<n\,\}\).
+\end{proof}
+\begin{rmk}
+We proved transitivity of~\(\N\) ``by induction'' on~\(\N\): \(0\subset\N\) and if \(n\subset\N\) then \(n+1\subset\N\), so \(n\subset\N\) for all \(n\in\N\). The following exercises are similar.
+\end{rmk}
+
+\begin{exer}[4]
+If \(X\)~is inductive, then the set \(\{\,x\in X\mid x\text{ is transitive}\,\}\) is inductive. Hence every \(n\in\N\) is transitive.
+\end{exer}
+\begin{proof}
+The class~\(C\) of transitive sets is inductive. Indeed, \(\emptyset\)~is transitive, and if \(x\)~is transitive then \(\suc{x}\)~is transitive since \(y\in\suc{x}\) implies \(y\subset x\subset\suc{x}\). It follows that \(\{\,x\in X\mid x\text{ is transitive}\,\}=X\sect C\) is inductive since the intersection of two inductive classes is inductive. Taking \(X=\N\), it follows as above that every \(n\in\N\) is transitive.
+\end{proof}
+
+\begin{exer}[5]
+If \(X\)~is inductive, then the set \(\{\,x\in X\mid x\text{ is transitive and }x\not\in x\,\}\) is inductive. Hence \(n\not\in n\) and \(n\ne n+1\) for all \(n\in\N\).
+\end{exer}
+\begin{proof}
+The class \(C=\{\,x\mid x\text{ is transitive and }x\not\in x\,\}\) is inductive. Indeed, \(\emptyset\in C\). If \(x\in C\), then \(\suc{x}\)~is transitive (by inductivity of the class of transitive sets). Also \(\suc{x}\not\in x\), lest \(\suc{x}\subset x\) by transitivity of~\(x\) and hence \(x\in x\)---contradicting \(x\not\in x\). Similarly \(\suc{x}\not=x\). Therefore \(\suc{x}\not\in\suc{x}\). So \(\suc{x}\in C\), and \(C\)~is inductive. It follows as above that \(X\sect C\)~is inductive, and taking \(X=\N\) that \(n\not\in n\) and hence \(n\ne n+1\) for all \(n\in\N\).
+\end{proof}
+
+\begin{rmk}
+In order to prove that \(n\not\in n\) for all \(n\in\N\) by induction on~\(\N\), we ``loaded the induction hypothesis'' with transitivity.
+\end{rmk}
 
 % References
 \begin{thebibliography}{0}
