@@ -64,6 +64,31 @@ The class \(C=\{\,x\mid x\text{ is transitive and }x\not\in x\,\}\) is inductive
 In order to prove that \(n\not\in n\) for all \(n\in\N\) by induction on~\(\N\), we ``loaded the induction hypothesis'' with transitivity.
 \end{rmk}
 
+\begin{exer}[6]
+If \(X\)~is inductive, then the set \(\{\,x\in X\mid x\text{ is transitive and regular}\,\}\) is inductive, where a set \(x\)~is called \emph{regular} if every nonempty subset of~\(x\) has an \(\in\)-minimal element.
+\end{exer}
+\begin{proof}
+The class \(C=\{\,x\mid x\text{ is transitive and regular}\,\}\) is inductive. Indeed, \(\emptyset\in C\). If \(x\in C\), then \(\suc{x}\)~is transitive. If \(y\subset\suc{x}\) is nonempty, let \(z=y-\{x\}\subset x\). If \(z=\emptyset\), then \(y=\{x\}\), and \(x\)~is \(\in\)-minimal in~\(y\) by regularity of~\(x\). If \(z\ne\emptyset\) and \(t\)~is \(\in\)-minimal in~\(z\), then \(x\not\in t\) by transitivity and regularity of~\(x\), so \(t\)~is \(\in\)-minimal in~\(y\). Therefore \(\suc{x}\)~is regular. So \(\suc{x}\in C\), and \(C\)~is inductive. It follows as above that \(X\sect C\)~is inductive.
+\end{proof}
+
+\begin{rmk}
+Taking \(X=\N\) it follows as above that every \(n\in\N\) is regular.
+\end{rmk}
+
+\begin{exer}[7]
+Every nonempty \(X\subset\N\) has an \(\in\)-minimal element.
+\end{exer}
+\begin{proof}
+Choose \(n\in X\). If \(n\)~is not \(\in\)-minimal in~\(X\), then \(n\sect X\)~is a nonempty subset of~\(n\), which has an \(\in\)-minimal element~\(m\) (Exercise~6). By transitivity of~\(n\) (Exercise~4), \(m\)~is \(\in\)-minimal in~\(X\).
+\end{proof}
+
+\begin{exer}[8]
+Let \(A\subset\N\) be such that \(0\in A\), and if \(n\in A\) then \(n+1\in A\). Then \(A=\N\).
+\end{exer}
+\begin{proof}
+\(A\)~is inductive, so \(A=\N\) since \(\N\)~is the smallest inductive set.
+\end{proof}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{jech} Jech, Thomas. \textit{Set Theory}, 3rd~ed. Springer, 2002.
