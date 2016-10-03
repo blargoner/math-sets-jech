@@ -83,10 +83,19 @@ Choose \(n\in X\). If \(n\)~is not \(\in\)-minimal in~\(X\), then \(n\sect X\)~i
 \end{proof}
 
 \begin{exer}[8]
+If \(X\)~is inductive, then the set \(\{\,x\in X\mid x=\emptyset\text{ or }\exists y(x=\suc{y})\,\}\) is inductive. Hence for all \(n\in\N\), \(n=0\) or \(n=m+1\) for some \(m\in\N\).
+\end{exer}
+\begin{proof}
+The class \(C=\{\,x\mid x=\emptyset\text{ or }\exists y(x=\suc{y})\,\}\) is obviously inductive, so \(X\sect C\)~is inductive. Taking \(X=\N\), the rest follows, with \(m\in\N\) by transitivity of~\(\N\).
+\end{proof}
+
+\begin{exer}[9]
 Let \(A\subset\N\) be such that \(0\in A\), and if \(n\in A\) then \(n+1\in A\). Then \(A=\N\).
 \end{exer}
 \begin{proof}
 \(A\)~is inductive, so \(A=\N\) since \(\N\)~is the smallest inductive set.
+
+Alternately, if \(A\ne\N\), let \(m\)~be \(\in\)-minimal in \(\N-A\) (Exercise~7). Then \(m\ne0\), and \(m\ne n+1\) for any \(n\in\N\), which is impossible (Exercise~8).
 \end{proof}
 
 % References
