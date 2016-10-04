@@ -4,11 +4,13 @@
 \usepackage{amsmath,amssymb,amsthm,enumitem,fourier}
 
 \newcommand{\N}{\boldsymbol{N}}
+\renewcommand{\P}{P}
 
 \newcommand{\union}{\cup}
 \newcommand{\sect}{\cap}
 
 \newcommand{\suc}[1]{#1\union\{#1\}}
+\newcommand{\preimage}[1]{#1_{-1}}
 
 % Theorems
 \theoremstyle{definition}
@@ -30,10 +32,10 @@ This document contains notes and exercises from~\cite{jech}.
 
 \section*{Chapter~1}
 \begin{exer}[2]
-There is no set~\(X\) such that \(P(X)\subset X\).
+There is no set~\(X\) such that \(\P(X)\subset X\).
 \end{exer}
 \begin{proof}
-By the axiom of regularity~(1.8), \(X\)~is \(\in\)-minimal in~\(\{X\}\), so \(X\not\in X\) and hence \(P(X)\not\subset X\).
+By the axiom of regularity~(1.8), \(X\)~is \(\in\)-minimal in~\(\{X\}\), so \(X\not\in X\) and hence \(\P(X)\not\subset X\).
 \end{proof}
 
 \begin{exer}[3]
@@ -86,7 +88,7 @@ Choose \(n\in X\). If \(n\)~is not \(\in\)-minimal in~\(X\), then \(n\sect X\)~i
 If \(X\)~is inductive, then the set \(\{\,x\in X\mid x=\emptyset\text{ or }\exists y(x=\suc{y})\,\}\) is inductive. Hence for all \(n\in\N\), \(n=0\) or \(n=m+1\) for some \(m\in\N\).
 \end{exer}
 \begin{proof}
-The class \(C=\{\,x\mid x=\emptyset\text{ or }\exists y(x=\suc{y})\,\}\) is obviously inductive, so \(X\sect C\)~is inductive. Taking \(X=\N\), the rest follows, with \(m\in\N\) by transitivity of~\(\N\).
+The class \(C=\{\,x\mid x=\emptyset\text{ or }\exists y(x=\suc{y})\,\}\) is obviously inductive, so \(X\sect C\)~is inductive. Taking \(X=\N\), the rest follows, with \(m\in\N\) by transitivity of~\(\N\) (Exercise~3).
 \end{proof}
 
 \begin{exer}[9]
@@ -97,6 +99,51 @@ Let \(A\subset\N\) be such that \(0\in A\), and if \(n\in A\) then \(n+1\in A\).
 
 Alternately, if \(A\ne\N\), let \(m\)~be \(\in\)-minimal in \(\N-A\) (Exercise~7). Then \(m\ne0\), and \(m\ne n+1\) for any \(n\in\N\), which is impossible (Exercise~8).
 \end{proof}
+
+\begin{exer}[10]
+Each \(n\in\N\) is T-finite.
+\end{exer}
+\begin{proof}
+By induction on~\(\N\). First, \(n=0\)~is T-finite since \(\P(\emptyset)=\{\emptyset\}\) and \(\emptyset\)~is \(\subset\)-maximal in~\(\{\emptyset\}\). If \(n\)~is T-finite, suppose \(X\subset\P(\suc{n})\) is nonempty. Let
+\[X'=\{\,u-\{n\}\mid u\in X\,\}\]
+Then \(X'\subset\P(n)\) is nonempty and has a \(\subset\)-maximal element \(u-\{n\}\) for some \(u\in X\) by T-finiteness of~\(n\), where we may assume \(n\in u\) if \(u\union\{n\}\in X\). We claim \(u\)~is \(\subset\)-maximal in~\(X\). Indeed, if \(v\in X\) and \(u\subset v\), then \(u-\{n\}\subset v-\{n\}\), so \(u-\{n\}=v-\{n\}\) by \(\subset\)-maximality of~\(u-\{n\}\) in~\(X'\), so \(u=v\) by the assumption about~\(u\). Therefore \(n+1\)~is T-finite.
+\end{proof}
+
+\begin{exer}[11]
+\(\N\)~is T-infinite. In fact, \(\N\subset\P(\N)\) has no \(\subset\)-maximal element.
+\end{exer}
+\begin{proof}
+We know \(\N\subset\P(\N)\) by transitivity of~\(\N\) (Exercise~3), and for all \(n\in\N\) we have \(n\subset n+1\in\N\) but \(n\ne n+1\) (Exercise~5).
+\end{proof}
+
+\begin{rmk}
+If \(A\)~is T-finite and \(\pi:A\to B\) is surjective (onto), then \(B\)~is T-finite.
+\end{rmk}
+\begin{proof}
+By pullback. If \(X\subset\P(B)\) is nonempty, let
+\[\preimage{X}=\preimage{\pi}(X)=\{\,\preimage{u}=\preimage{\pi}(u)\mid u\in X\,\}\]
+Then \(\preimage{X}\subset\P(A)\) is nonempty and has a \(\subset\)-maximal element \(\preimage{u}\) for some \(u\in X\) by T-finiteness of~\(A\). We claim \(u\)~is \(\subset\)-maximal in~\(X\). Indeed, if \(v\in X\) and \(u\subset v\), then \(\preimage{u}\subset\preimage{v}\), so \(\preimage{u}=\preimage{v}\) by \(\subset\)-maximality of~\(\preimage{u}\) in~\(\preimage{X}\), so \(u=v\) by surjectivity of~\(\pi\). Therefore \(B\)~is T-finite.
+\end{proof}
+
+\begin{exer}[12]
+Every finite set is T-finite.
+\end{exer}
+\begin{proof}
+By definition, every finite set is the image of a T-finite natural number (Exercise~10), so is T-finite by the previous remark.
+
+Alternately, if \(S\)~is T-infinite, choose \(X\subset\P(S)\) nonempty with no \(\subset\)-maximal element. By induction on~\(\N\), for each \(n\in\N\) there is a properly ascending chain \(u_0\subset\cdots\subset u_n\subset S\) of length~\(n+1\) in~\(X\), and hence an injection \(n\to S\) sending \(m\in n\) into \(u_{m+1}-u_m\). If \(S\)~had \(k\)~elements for some \(k\in\N\), there would then be an injection \(k+1\to k\), which is impossible by an easy induction on~\(k\). Therefore \(S\)~is infinite.
+\end{proof}
+
+\begin{exer}[13]
+Every infinite set is T-infinite.
+\end{exer}
+\begin{proof}
+If \(S\)~is infinite, let \(X\)~be the set of finite subsets of~\(S\). Clearly \(X\)~is nonempty since \(\emptyset\in X\). Also \(X\)~has no \(\subset\)-maximal element. Indeed, if \(u\in X\) then there is \(s\in S-u\) since \(S\)~is infinite, and \(u\union\{s\}\)~is finite (if \(u\)~has \(k\)~elements, then \(u\union\{s\}\)~has \(k+1\) elements), so \(u\subset u\union\{s\}\in X\) where the inclusion is proper. Therefore \(S\)~is T-infinite.
+\end{proof}
+
+\begin{rmk}
+The previous two exercises show that (Cantor) finiteness is equivalent to Tarski finiteness in~ZF.
+\end{rmk}
 
 % References
 \begin{thebibliography}{0}
