@@ -5,6 +5,7 @@
 
 \newcommand{\N}{\boldsymbol{N}}
 \renewcommand{\P}{P}
+\newcommand{\Ord}{\mathit{Ord}}
 
 \newcommand{\union}{\cup}
 \newcommand{\sect}{\cap}
@@ -143,6 +144,13 @@ If \(S\)~is infinite, let \(X\)~be the set of finite subsets of~\(S\). Clearly \
 
 \begin{rmk}
 The previous two exercises show that (Cantor) finiteness is equivalent to Tarski finiteness in~ZF.
+\end{rmk}
+
+\section*{Chapter~2}
+\begin{rmk}
+In~(2.1), \(<\)~is actually a \emph{well-ordering} on~\(\Ord\). Indeed, if \(C\subset\Ord\) is a nonempty class of ordinals and \(\alpha\in C\) is not \(\in\)-minimal in~\(C\), then \(\alpha\sect C\)~is a nonempty subset of~\(\alpha\) which has an \(\in\)-minimal element~\(\beta\). By transitivity of~\(\alpha\), \(\beta\)~is \(\in\)-minimal in~\(C\).
+
+This observation provides an alternative proof that \(\Ord\)~is a proper class: if \(\Ord\)~were a set, then because it is transitive and strictly well-ordered by~\(\in\), it would be an ordinal, and hence \(\Ord\in\Ord\)---contradicting strictness.
 \end{rmk}
 
 % References
