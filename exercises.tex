@@ -8,10 +8,13 @@
 \newcommand{\Ord}{\mathit{Ord}}
 
 \newcommand{\union}{\cup}
+\newcommand{\bigunion}{\bigcup}
 \newcommand{\sect}{\cap}
+\newcommand{\bigsect}{\bigcap}
 
 \newcommand{\suc}[1]{#1\union\{#1\}}
 \newcommand{\preimage}[1]{#1_{-1}}
+\newcommand{\card}[1]{|#1|}
 
 % Theorems
 \theoremstyle{definition}
@@ -151,6 +154,44 @@ The previous two exercises show that (Cantor) finiteness is equivalent to Tarski
 In~(2.1), \(<\)~is actually a \emph{well-ordering} on~\(\Ord\). Indeed, if \(C\subset\Ord\) is a nonempty class of ordinals and \(\alpha\in C\) is not \(\in\)-minimal in~\(C\), then \(\alpha\sect C\)~is a nonempty subset of~\(\alpha\) which has an \(\in\)-minimal element~\(\beta\). By transitivity of~\(\alpha\), \(\beta\)~is \(\in\)-minimal in~\(C\).
 
 This observation provides an alternative proof that \(\Ord\)~is a proper class: if \(\Ord\)~were a set, then because it is transitive and strictly well-ordered by~\(\in\), it would be an ordinal, and hence \(\Ord\in\Ord\)---contradicting strictness.
+\end{rmk}
+
+\begin{exer}[2]
+\(\alpha\)~is a limit ordinal if and only if \(\beta<\alpha\) implies \(\beta+1<\alpha\) for all~\(\beta\).
+\end{exer}
+\begin{proof}
+If \(\alpha\)~is a limit ordinal and \(\beta<\alpha\), then \(\beta+1\le\alpha\) (2.5) and \(\beta+1\ne\alpha\), so \(\beta+1<\alpha\). If \(\alpha\)~is not a limit ordinal, then \(\beta+1=\alpha\) for some~\(\beta<\alpha\).
+\end{proof}
+\begin{rmk}
+It follows that \(\alpha\)~is a nonzero limit ordinal if and only if it is inductive.
+\end{rmk}
+
+\begin{exer}[3]
+If \(X\)~is inductive, then \(X\sect\Ord\)~is inductive. \(\N=\bigsect\{\,X\mid X\text{ inductive}\,\}\) is the least nonzero limit ordinal.
+\end{exer}
+\begin{proof}
+Clearly \(\Ord\)~is inductive, so \(X\sect\Ord\)~is inductive since the intersection of two inductive classes is inductive. Taking \(X=\N\), it follows that \(\N\subset\Ord\), and since \(\N\)~is also transitive, \(\N\)~is an ordinal. By the previous remark, \(\N\)~is the least nonzero limit ordinal.
+\end{proof}
+
+\begin{exer}[4]
+(Without the axiom of infinity.) Let \(\omega\)~be the least nonzero limit ordinal, if it exists, or~\(\Ord\) otherwise. The following are equivalent:
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] There exists an inductive set.
+\item[(ii)] There exists an infinite\footnote{In this exercise, a set is \emph{finite} if it is in bijective correspondence with some \(n\in\omega\) and \emph{infinite} otherwise, even if \(\omega=\Ord\).} set.
+\item[(iii)] \(\omega\)~is a set.
+\end{enumerate}
+\end{exer}
+\begin{proof}
+(i) \(\iff\) (iii): The smallest inductive set is the least nonzero limit ordinal (Exercise~3).
+
+(iii) \(\implies\) (ii): \(\omega\)~is infinite (Exercises 1.11--2).
+
+(ii) \(\implies\) (i): For any finite set~\(A\), let \(\card{A}\)~denote the least \(n\in\omega\) in bijective correspondence with~\(A\) (the ``number of elements'' in~\(A\)). If \(X\)~is infinite, let
+\[S=\{\,\card{A}\mid A\subset X\text{ finite}\,\}\]
+Note \(S\)~is a set by replacement, and \(S\)~is inductive. Indeed, \(0\in S\) since \(\emptyset\subset X\) and \(\card{\emptyset}=0\). If \(n\in S\) and \(A\subset X\) with \(\card{A}=n\), then there must exist \(x\in X-A\) since \(X\)~is infinite, and \(\card{A\union\{x\}}=n+1\in S\).
+\end{proof}
+\begin{rmk}
+This exercise shows that (i)--(iii) are equivalent forms of the axiom of infinity in~ZF.
 \end{rmk}
 
 % References
