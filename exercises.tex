@@ -15,6 +15,7 @@
 \newcommand{\suc}[1]{#1\union\{#1\}}
 \newcommand{\preimage}[1]{#1_{-1}}
 \newcommand{\card}[1]{|#1|}
+\newcommand{\seq}[1]{\langle#1\rangle}
 
 % Theorems
 \theoremstyle{definition}
@@ -193,6 +194,20 @@ Note \(S\)~is a set by replacement, and \(S\)~is inductive. Indeed, \(0\in S\) s
 \begin{rmk}
 This exercise shows that (i)--(iii) are equivalent forms of the axiom of infinity in~ZF.
 \end{rmk}
+
+\begin{exer}[5]
+If \(W\)~is a well-ordered set, then there is no sequence \(\seq{\,a_n\mid n\in\N\,}\) in~\(W\) such that \(a_0>a_1>\cdots\)\ .
+\end{exer}
+\begin{proof}
+If there were such a sequence, then \(\{\,a_n\mid n\in\N\,\}\) would be a nonempty subset of~\(W\) with no least element, contradicting well-ordering.
+\end{proof}
+
+\begin{exer}[6]
+There are arbitrarily large limit ordinals.
+\end{exer}
+\begin{proof}
+Given~\(\alpha\), let \(\beta=\alpha+\omega\). Clearly \(\beta>\alpha\). If \(\gamma<\beta\), then either \(\gamma<\alpha\), in which case \(\gamma+1<\alpha+1<\beta\), or \(\gamma\ge\alpha\), in which case \(\gamma=\alpha+n\) for some \(n\in\omega\) (2.25), so \(\gamma+1=\alpha+n+1<\beta\). Therefore \(\beta\)~is a limit ordinal (Exercise~2).
+\end{proof}
 
 % References
 \begin{thebibliography}{0}
