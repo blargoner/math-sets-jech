@@ -36,14 +36,14 @@
 This document contains notes and exercises from~\cite{jech}.
 
 \section*{Chapter~1}
-\begin{exer}[2]
+\begin{exer}[1.2]
 There is no set~\(X\) such that \(\P(X)\subset X\).
 \end{exer}
 \begin{proof}
 By the axiom of regularity~(1.8), \(X\)~is \(\in\)-minimal in~\(\{X\}\), so \(X\not\in X\) and hence \(\P(X)\not\subset X\).
 \end{proof}
 
-\begin{exer}[3]
+\begin{exer}[1.3]
 If \(X\)~is inductive, then the set \(\{\,x\in X\mid x\subset X\,\}\) is inductive. Hence \(\N\)~is transitive and for each \(n\in\N\), \(n=\{\,m\in\N\mid m<n\,\}\).
 \end{exer}
 \begin{proof}
@@ -53,14 +53,14 @@ Let \(S=\{\,x\in X\mid x\subset X\,\}\). By inductivity of~\(X\), \(\emptyset\in
 We proved transitivity of~\(\N\) ``by induction'' on~\(\N\): \(0\subset\N\) and if \(n\subset\N\) then \(n+1\subset\N\), so \(n\subset\N\) for all \(n\in\N\). The following exercises are similar.
 \end{rmk}
 
-\begin{exer}[4]
+\begin{exer}[1.4]
 If \(X\)~is inductive, then the set \(\{\,x\in X\mid x\text{ is transitive}\,\}\) is inductive. Hence every \(n\in\N\) is transitive.
 \end{exer}
 \begin{proof}
 The class~\(C\) of transitive sets is inductive. Indeed, \(\emptyset\)~is transitive, and if \(x\)~is transitive then \(\suc{x}\)~is transitive since \(y\in\suc{x}\) implies \(y\subset x\subset\suc{x}\). It follows that \(\{\,x\in X\mid x\text{ is transitive}\,\}=X\sect C\) is inductive since the intersection of two inductive classes is inductive. Taking \(X=\N\), it follows as above that every \(n\in\N\) is transitive.
 \end{proof}
 
-\begin{exer}[5]
+\begin{exer}[1.5]
 If \(X\)~is inductive, then the set \(\{\,x\in X\mid x\text{ is transitive and }x\not\in x\,\}\) is inductive. Hence \(n\not\in n\) and \(n\ne n+1\) for all \(n\in\N\).
 \end{exer}
 \begin{proof}
@@ -71,7 +71,7 @@ The class \(C=\{\,x\mid x\text{ is transitive and }x\not\in x\,\}\) is inductive
 In order to prove that \(n\not\in n\) for all \(n\in\N\) by induction on~\(\N\), we ``loaded the induction hypothesis'' with transitivity.
 \end{rmk}
 
-\begin{exer}[6]
+\begin{exer}[1.6]
 If \(X\)~is inductive, then the set \(\{\,x\in X\mid x\text{ is transitive and regular}\,\}\) is inductive, where a set \(x\)~is called \emph{regular} if every nonempty subset of~\(x\) has an \(\in\)-minimal element.
 \end{exer}
 \begin{proof}
@@ -82,30 +82,30 @@ The class \(C=\{\,x\mid x\text{ is transitive and regular}\,\}\) is inductive. I
 Taking \(X=\N\) it follows as above that every \(n\in\N\) is regular.
 \end{rmk}
 
-\begin{exer}[7]
+\begin{exer}[1.7]
 Every nonempty \(X\subset\N\) has an \(\in\)-minimal element.
 \end{exer}
 \begin{proof}
-Choose \(n\in X\). If \(n\)~is not \(\in\)-minimal in~\(X\), then \(n\sect X\)~is a nonempty subset of~\(n\), which has an \(\in\)-minimal element~\(m\) (Exercise~6). By transitivity of~\(n\) (Exercise~4), \(m\)~is \(\in\)-minimal in~\(X\).
+Choose \(n\in X\). If \(n\)~is not \(\in\)-minimal in~\(X\), then \(n\sect X\)~is a nonempty subset of~\(n\), which has an \(\in\)-minimal element~\(m\) (Exercise~1.6). By transitivity of~\(n\) (Exercise~1.4), \(m\)~is \(\in\)-minimal in~\(X\).
 \end{proof}
 
-\begin{exer}[8]
+\begin{exer}[1.8]
 If \(X\)~is inductive, then the set \(\{\,x\in X\mid x=\emptyset\text{ or }\exists y(x=\suc{y})\,\}\) is inductive. Hence for all \(n\in\N\), \(n=0\) or \(n=m+1\) for some \(m\in\N\).
 \end{exer}
 \begin{proof}
-The class \(C=\{\,x\mid x=\emptyset\text{ or }\exists y(x=\suc{y})\,\}\) is obviously inductive, so \(X\sect C\)~is inductive. Taking \(X=\N\), the rest follows, with \(m\in\N\) by transitivity of~\(\N\) (Exercise~3).
+The class \(C=\{\,x\mid x=\emptyset\text{ or }\exists y(x=\suc{y})\,\}\) is obviously inductive, so \(X\sect C\)~is inductive. Taking \(X=\N\), the rest follows, with \(m\in\N\) by transitivity of~\(\N\) (Exercise~1.3).
 \end{proof}
 
-\begin{exer}[9]
+\begin{exer}[1.9]
 Let \(A\subset\N\) be such that \(0\in A\), and if \(n\in A\) then \(n+1\in A\). Then \(A=\N\).
 \end{exer}
 \begin{proof}
 \(A\)~is inductive, so \(A=\N\) since \(\N\)~is the smallest inductive set.
 
-Alternately, if \(A\ne\N\), let \(m\)~be \(\in\)-minimal in \(\N-A\) (Exercise~7). Then \(m\ne0\), and \(m\ne n+1\) for any \(n\in\N\), which is impossible (Exercise~8).
+Alternately, if \(A\ne\N\), let \(m\)~be \(\in\)-minimal in \(\N-A\) (Exercise~1.7). Then \(m\ne0\), and \(m\ne n+1\) for any \(n\in\N\), which is impossible (Exercise~1.8).
 \end{proof}
 
-\begin{exer}[10]
+\begin{exer}[1.10]
 Each \(n\in\N\) is T-finite.
 \end{exer}
 \begin{proof}
@@ -114,11 +114,11 @@ By induction on~\(\N\). First, \(n=0\)~is T-finite since \(\P(\emptyset)=\{\empt
 Then \(X'\subset\P(n)\) is nonempty and has a \(\subset\)-maximal element \(u-\{n\}\) for some \(u\in X\) by T-finiteness of~\(n\), where we may assume \(n\in u\) if \(u\union\{n\}\in X\). We claim \(u\)~is \(\subset\)-maximal in~\(X\). Indeed, if \(v\in X\) and \(u\subset v\), then \(u-\{n\}\subset v-\{n\}\), so \(u-\{n\}=v-\{n\}\) by \(\subset\)-maximality of~\(u-\{n\}\) in~\(X'\), so \(u=v\) by the assumption about~\(u\). Therefore \(n+1\)~is T-finite.
 \end{proof}
 
-\begin{exer}[11]
+\begin{exer}[1.11]
 \(\N\)~is T-infinite. In fact, \(\N\subset\P(\N)\) has no \(\subset\)-maximal element.
 \end{exer}
 \begin{proof}
-We know \(\N\subset\P(\N)\) by transitivity of~\(\N\) (Exercise~3), and for all \(n\in\N\) we have \(n\subset n+1\in\N\) but \(n\ne n+1\) (Exercise~5).
+We know \(\N\subset\P(\N)\) by transitivity of~\(\N\) (Exercise~1.3), and for all \(n\in\N\) we have \(n\subset n+1\in\N\) but \(n\ne n+1\) (Exercise~1.5).
 \end{proof}
 
 \begin{rmk}
@@ -130,16 +130,16 @@ By pullback. If \(X\subset\P(B)\) is nonempty, let
 Then \(\preimage{X}\subset\P(A)\) is nonempty and has a \(\subset\)-maximal element \(\preimage{u}\) for some \(u\in X\) by T-finiteness of~\(A\). We claim \(u\)~is \(\subset\)-maximal in~\(X\). Indeed, if \(v\in X\) and \(u\subset v\), then \(\preimage{u}\subset\preimage{v}\), so \(\preimage{u}=\preimage{v}\) by \(\subset\)-maximality of~\(\preimage{u}\) in~\(\preimage{X}\), so \(u=v\) by surjectivity of~\(\pi\). Therefore \(B\)~is T-finite.
 \end{proof}
 
-\begin{exer}[12]
+\begin{exer}[1.12]
 Every finite set is T-finite.
 \end{exer}
 \begin{proof}
-By definition, every finite set is the image of a T-finite natural number (Exercise~10), so is T-finite by the previous remark.
+By definition, every finite set is the image of a T-finite natural number (Exercise~1.10), so is T-finite by the previous remark.
 
 Alternately, if \(S\)~is T-infinite, choose \(X\subset\P(S)\) nonempty with no \(\subset\)-maximal element. By induction on~\(\N\), for each \(n\in\N\) there is a properly ascending chain \(u_0\subset\cdots\subset u_n\subset S\) of length~\(n+1\) in~\(X\), and hence an injection \(n\to S\) sending \(m\in n\) into \(u_{m+1}-u_m\). If \(S\)~had \(k\)~elements for some \(k\in\N\), there would then be an injection \(k+1\to k\), which is impossible by an easy induction on~\(k\). Therefore \(S\)~is infinite.
 \end{proof}
 
-\begin{exer}[13]
+\begin{exer}[1.13]
 Every infinite set is T-infinite.
 \end{exer}
 \begin{proof}
@@ -157,7 +157,7 @@ In~(2.1), \(<\)~is actually a \emph{well-ordering} on~\(\Ord\). Indeed, if \(C\s
 This observation provides an alternative proof that \(\Ord\)~is a proper class: if \(\Ord\)~were a set, then because it is transitive and strictly well-ordered by~\(\in\), it would be an ordinal, and hence \(\Ord\in\Ord\)---contradicting strictness.
 \end{rmk}
 
-\begin{exer}[2]
+\begin{exer}[2.2]
 \(\alpha\)~is a limit ordinal if and only if \(\beta<\alpha\) implies \(\beta+1<\alpha\) for all~\(\beta\).
 \end{exer}
 \begin{proof}
@@ -167,14 +167,14 @@ If \(\alpha\)~is a limit ordinal and \(\beta<\alpha\), then \(\beta+1\le\alpha\)
 It follows that \(\alpha\)~is a nonzero limit ordinal if and only if it is inductive.
 \end{rmk}
 
-\begin{exer}[3]
-If \(X\)~is inductive, then \(X\sect\Ord\)~is inductive. \(\N=\bigsect\{\,X\mid X\text{ inductive}\,\}\) is the least nonzero limit ordinal.
+\begin{exer}[2.3]
+If \(X\)~is inductive, then \(X\sect\Ord\)~is inductive. \(\N\)~is the least nonzero limit ordinal, where \(\N=\bigsect\{\,X\mid X\text{ inductive}\,\}\).
 \end{exer}
 \begin{proof}
 Clearly \(\Ord\)~is inductive, so \(X\sect\Ord\)~is inductive since the intersection of two inductive classes is inductive. Taking \(X=\N\), it follows that \(\N\subset\Ord\), and since \(\N\)~is also transitive, \(\N\)~is an ordinal. By the previous remark, \(\N\)~is the least nonzero limit ordinal.
 \end{proof}
 
-\begin{exer}[4]
+\begin{exer}[2.4]
 (Without the axiom of infinity.) Let \(\omega\)~be the least nonzero limit ordinal, if it exists, or~\(\Ord\) otherwise. The following are equivalent:
 \begin{enumerate}[itemsep=0pt]
 \item[(i)] There exists an inductive set.
@@ -183,7 +183,7 @@ Clearly \(\Ord\)~is inductive, so \(X\sect\Ord\)~is inductive since the intersec
 \end{enumerate}
 \end{exer}
 \begin{proof}
-(i) \(\iff\) (iii): The smallest inductive set is the least nonzero limit ordinal (Exercise~3).
+(i) \(\iff\) (iii): The smallest inductive set is the least nonzero limit ordinal (Exercise~2.3).
 
 (iii) \(\implies\) (ii): \(\omega\)~is infinite (Exercises 1.11--2).
 
@@ -195,18 +195,18 @@ Note \(S\)~is a set by replacement, and \(S\)~is inductive. Indeed, \(0\in S\) s
 This exercise shows that (i)--(iii) are equivalent forms of the axiom of infinity in~ZF.
 \end{rmk}
 
-\begin{exer}[5]
+\begin{exer}[2.5]
 If \(W\)~is a well-ordered set, then there is no sequence \(\seq{\,a_n\mid n\in\N\,}\) in~\(W\) such that \(a_0>a_1>\cdots\)\ .
 \end{exer}
 \begin{proof}
 If there were such a sequence, then \(\{\,a_n\mid n\in\N\,\}\) would be a nonempty subset of~\(W\) with no least element, contradicting well-ordering.
 \end{proof}
 
-\begin{exer}[6]
+\begin{exer}[2.6]
 There are arbitrarily large limit ordinals.
 \end{exer}
 \begin{proof}
-Given~\(\alpha\), let \(\beta=\alpha+\omega\). Clearly \(\beta>\alpha\). If \(\gamma<\beta\), then either \(\gamma<\alpha\), in which case \(\gamma+1<\alpha+1<\beta\), or \(\gamma\ge\alpha\), in which case \(\gamma=\alpha+n\) for some \(n\in\omega\) (2.25), so \(\gamma+1=\alpha+n+1<\beta\). Therefore \(\beta\)~is a limit ordinal (Exercise~2).
+Given~\(\alpha\), let \(\beta=\alpha+\omega\). Clearly \(\beta>\alpha\). If \(\gamma<\beta\), then either \(\gamma<\alpha\), in which case \(\gamma+1<\alpha+1<\beta\), or \(\gamma\ge\alpha\), in which case \(\gamma=\alpha+n\) for some \(n\in\omega\) (Lemma~2.25), so \(\gamma+1=\alpha+n+1<\beta\). Thus \(\beta\)~is a limit ordinal (Exercise~2.2).
 \end{proof}
 
 % References
