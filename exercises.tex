@@ -11,6 +11,8 @@
 \newcommand{\bigunion}{\bigcup}
 \newcommand{\sect}{\cap}
 \newcommand{\bigsect}{\bigcap}
+\newcommand{\after}{\circ}
+\newcommand{\mult}{\cdot}
 
 \newcommand{\suc}[1]{#1\union\{#1\}}
 \newcommand{\preimage}[1]{#1_{-1}}
@@ -207,6 +209,57 @@ There are arbitrarily large limit ordinals.
 \end{exer}
 \begin{proof}
 Given~\(\alpha\), let \(\beta=\alpha+\omega\). Clearly \(\beta>\alpha\). If \(\gamma<\beta\), then either \(\gamma<\alpha\), in which case \(\gamma+1<\alpha+1<\beta\), or \(\gamma\ge\alpha\), in which case \(\gamma=\alpha+n\) for some \(n\in\omega\) (Lemma~2.25), so \(\gamma+1=\alpha+n+1<\beta\). Thus \(\beta\)~is a limit ordinal (Exercise~2.2).
+\end{proof}
+
+\begin{rmk}[Chain rule]
+If \(f,g:\Ord\to\Ord\) are nondecreasing and continuous, then so is~\(f\after g\). If \(f\)~and~\(g\) are normal, then so is~\(f\after g\).
+\end{rmk}
+\begin{proof}
+If \(\alpha<\beta\), then \(g(\alpha)\le g(\beta)\), so \(f(g(\alpha))\le f(g(\beta))\). Let \(\alpha\)~be a nonzero limit ordinal. Clearly \(f(g(\alpha))\ge\lim_{\xi\to\alpha}f(g(\xi))\). If \(g(\alpha)=g(\xi')\) for some \(\xi'<\alpha\), then \(f(g(\alpha))=f(g(\xi'))\le\lim_{\xi\to\alpha}f(g(\xi))\). Otherwise, \(g(\alpha)\)~is a limit ordinal. Indeed, \(g(\alpha)=\lim_{\xi\to\alpha}g(\xi)\) by continuity of~\(g\), so if \(\beta<g(\alpha)\), then \(\beta<g(\xi)\) for some \(\xi<\alpha\), and hence \(\beta+1\le g(\xi)<g(\alpha)\). But then \(f(g(\alpha))=\lim_{\zeta\to g(\alpha)}f(\zeta)\) by continuity of~\(f\). If \(\zeta<g(\alpha)\), then \(\zeta<g(\xi)\) for some \(\xi<\alpha\), so \(f(\zeta)\le f(g(\xi))\), and hence \(\lim_{\zeta\to g(\alpha)}f(\zeta)\le\lim_{\xi\to\alpha}f(g(\xi))\). Therefore again \(f(g(\alpha))=\lim_{\xi\to\alpha}f(g(\xi))\) and \(f\after g\)~is continuous.
+
+If \(f\)~and~\(g\) are also increasing, then \(f\after g\)~is increasing and hence normal.
+\end{proof}
+
+\begin{exer}[2.7]
+Every normal sequence \(\seq{\,\gamma_{\alpha}\mid\alpha\in\Ord\,}\) has arbitrarily large fixed points (that is, \(\beta\)~such that \(\gamma_{\beta}=\beta\)).
+\end{exer}
+\begin{proof}
+Given~\(\alpha\), let \(\beta_0=\gamma_{\alpha}\) and \(\beta_{n+1}=\gamma_{\beta_n}\) for all \(n\in\omega\). Note \(\beta_{n+1}\ge\beta_n\ge\alpha\) for all \(n\in\omega\) since \(\gamma\)~is increasing (Lemma~2.4). Let \(\beta=\lim_{n\to\omega}\beta_n\). Then
+\[\gamma_{\beta}=\lim_{n\to\omega}\gamma_{\beta_n}=\lim_{n\to\omega}\beta_{n+1}=\beta\]
+by the chain rule above (taking \(\beta_{\alpha}=\beta\) for all \(\alpha\ge\omega\)).
+\end{proof}
+
+\begin{exer}[2.8]
+For all \(\alpha,\beta,\gamma\):
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] \(\alpha\mult(\beta+\gamma)=\alpha\mult\beta+\alpha\mult\gamma\)
+\item[(ii)] \(\alpha^{\beta+\gamma}=\alpha^{\beta}\mult\alpha^{\gamma}\)
+\item[(iii)] \((\alpha^{\beta})^{\gamma}=\alpha^{\beta\mult\gamma}\)
+\end{enumerate}
+\end{exer}
+\begin{proof}
+By induction on~\(\gamma\).
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] If \(\gamma=0\),
+\[\alpha\mult(\beta+\gamma)=\alpha\mult(\beta+0)=\alpha\mult\beta=\alpha\mult\beta+0=\alpha\mult\beta+\alpha\mult 0=\alpha\mult\beta+\alpha\mult\gamma\]
+If the result holds for~\(\gamma\), then
+\begin{align*}
+\alpha\mult(\beta+(\gamma+1))&=\alpha\mult((\beta+\gamma)+1)&&\text{by associativity of~\(+\)}\\
+	&=\alpha\mult(\beta+\gamma)+\alpha&&\text{by definition of~\(\mult\)}\\
+	&=(\alpha\mult\beta+\alpha\mult\gamma)+\alpha&&\text{by hypothesis}\\
+	&=\alpha\mult\beta+(\alpha\mult\gamma+\alpha)&&\text{by associativity of~\(+\)}\\
+	&=\alpha\mult\beta+\alpha\mult(\gamma+1)&&\text{by definition of~\(\mult\)}
+\end{align*}
+so the result holds for~\(\gamma+1\). If \(\gamma\)~is a nonzero limit ordinal and the result holds for all \(\xi<\gamma\), then
+\begin{align*}
+\alpha\mult(\beta+\gamma)&=\lim_{\xi\to\gamma}\alpha\mult(\beta+\xi)&&\text{by continuity of }\xi\mapsto\alpha\mult(\beta+\xi)\\
+	&=\lim_{\xi\to\gamma}(\alpha\mult\beta+\alpha\mult\xi)&&\text{by hypothesis}\\
+	&=\alpha\mult\beta+\alpha\mult\gamma&&\text{by continuity of }\xi\mapsto\alpha\mult\beta+\alpha\mult\xi
+\end{align*}
+so the result holds for~\(\gamma\). Note that continuity of the composite mappings involved follows from continuity of addition and multiplication and the chain rule above.
+\item[(ii)] Similar.
+\item[(iii)] Similar, using (i)~and~(ii) in the successor step.\qedhere
+\end{enumerate}
 \end{proof}
 
 % References
