@@ -262,6 +262,54 @@ so the result holds for~\(\gamma\). Note that continuity of the composite mappin
 \end{enumerate}
 \end{proof}
 
+\begin{exer}[2.9]\
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] \((\omega+1)\mult 2=\omega+1+\omega+1=\omega+\omega+1=\omega\mult 2+1<\omega\mult 2+2=\omega\mult 2+1\mult 2\)
+\item[(ii)] \((\omega\mult 2)^2=\omega\mult 2\mult\omega\mult 2=\omega\mult\omega\mult 2=\omega^2\mult 2<\omega^2\mult 4=\omega^2\mult 2^2\)
+\end{enumerate}
+\end{exer}
+\begin{rmk}
+This result shows that \((\alpha+\beta)\mult\gamma\) does not in general equal \(\alpha\mult\gamma+\beta\mult\gamma\), and \((\alpha\mult\beta)^{\gamma}\) does not in general equal \(\alpha^{\gamma}\mult\beta^{\gamma}\).
+\end{rmk}
+
+\begin{exer}[2.10]
+If \(\alpha<\beta\), then \(\alpha+\gamma\le\beta+\gamma\), \(\alpha\mult\gamma\le\beta\mult\gamma\), and \(\alpha^{\gamma}\le\beta^{\gamma}\) for all~\(\gamma\).
+\end{exer}
+\begin{proof}
+By induction on~\(\gamma\).
+\end{proof}
+
+\begin{exer}[2.11]
+\(2<3\) but
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] \(2+\omega=\omega=3+\omega\)
+\item[(ii)] \(2\mult\omega=\omega=3\mult\omega\)
+\item[(iii)] \(2^{\omega}=\omega=3^{\omega}\)
+\end{enumerate}
+\end{exer}
+
+\begin{exer}[2.12]
+Let \(\epsilon_0=\lim_{n\to\omega}\alpha_n\) where \(\alpha_0=\omega\) and \(\alpha_{n+1}=\omega^{\alpha_n}\). Then \(\epsilon_0\)~is the least ordinal~\(\epsilon\) such that \(\omega^{\epsilon}=\epsilon\).
+\end{exer}
+\begin{proof}
+By continuity of exponentiation and the chain rule above (taking \(\alpha_{\beta}=\epsilon_0\) for all \(\beta\ge\omega\)),
+\[\omega^{\epsilon_0}=\lim_{n\to\omega}\omega^{\alpha_n}=\lim_{n\to\omega}\alpha_{n+1}=\epsilon_0\]
+If \(\omega^{\epsilon}=\epsilon\), we prove by induction that \(\alpha_n\le\epsilon\) for all \(n\in\omega\), from which it follows that \(\epsilon_0\le\epsilon\). Indeed, since \(\omega^0=1\ne0\), we have \(\epsilon\ne 0\) and hence \(\alpha_0=\omega\le\omega^{\epsilon}=\epsilon\). If \(\alpha_n\le\epsilon\), then \(\alpha_{n+1}=\omega^{\alpha_n}\le\omega^{\epsilon}=\epsilon\).
+\end{proof}
+
+\begin{exer}[2.13]
+A limit ordinal \(\gamma>0\) is indecomposable if and only if \(\alpha+\gamma=\gamma\) for all \(\alpha<\gamma\) if and only if \(\gamma=\omega^{\alpha}\) for some~\(\alpha>0\).
+\end{exer}
+\begin{proof}
+If \(\gamma=\alpha+\beta\) with \(\alpha,\beta<\gamma\), then \(\alpha+\gamma>\alpha+\beta=\gamma\). Conversely, if \(\alpha<\gamma\) and \(\alpha+\gamma>\gamma\), fix~\(\beta\) such that \(\alpha+\beta=\gamma\) (Lemma~2.25). If \(\beta\ge\gamma\), then \(\gamma=\alpha+\beta\ge\alpha+\gamma>\gamma\), which is impossible, so \(\beta<\gamma\).
+
+The forward direction of the second equivalence follows from the Cantor normal form (Theorem~2.26). For the reverse direction, we prove by induction on \(\alpha>0\) that \(\omega^{\alpha}\)~is indecomposable. The result holds for \(\alpha=1\) since \(n+\omega=\omega\) for all \(n\in\omega\). If \(\omega^{\alpha}\)~is indecomposable and \(\beta<\omega^{\alpha+1}=\omega^{\alpha}\mult\omega\), then \(\beta<\omega^{\alpha}\mult n\) for some \(n\in\omega\), so (Exercises 2.10 and 2.8)
+\[\beta+\omega^{\alpha+1}\le\omega^{\alpha}\mult n+\omega^{\alpha}\mult\omega=\omega^{\alpha}\mult(n+\omega)=\omega^{\alpha}\mult\omega=\omega^{\alpha+1}\]
+and hence \(\omega^{\alpha+1}\)~is indecomposable. Finally if \(\alpha>0\)~is a limit ordinal, \(\omega^{\xi}\)~is indecomposable for all \(\xi<\alpha\), and \(\beta<\omega^{\alpha}\), then by continuity
+\[\beta+\omega^{\alpha}=\lim_{\xi\to\alpha}(\beta+\omega^{\xi})=\lim_{\xi\to\alpha}\omega^{\xi}=\omega^{\alpha}\]
+and hence \(\omega^{\alpha}\)~is indecomposable.
+\end{proof}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{jech} Jech, Thomas. \textit{Set Theory}, 3rd~ed. Springer, 2002.
