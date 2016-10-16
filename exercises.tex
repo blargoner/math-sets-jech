@@ -14,6 +14,8 @@
 \newcommand{\after}{\circ}
 \newcommand{\mult}{\cdot}
 
+\DeclareMathOperator{\type}{type}
+
 \newcommand{\suc}[1]{#1\union\{#1\}}
 \newcommand{\preimage}[1]{#1_{-1}}
 \newcommand{\card}[1]{|#1|}
@@ -160,8 +162,27 @@ This observation provides an alternative proof that \(\Ord\)~is a proper class: 
 \end{rmk}
 
 \begin{rmk}
-In~(2.13), an ordinal is ``finite'' if and only if it is a ``finite ordinal''. In fact, if \(\alpha\)~is not a ``finite ordinal'' then \(\omega\subset\alpha\), and it follows by induction on~\(n\) that there is no surjection \(n\to\omega\) (every function \(n\to\omega\) is bounded), hence there is no surjection \(n\to\alpha\), so \(\alpha\)~is not ``finite''. The converse is trivial.
+In Definition~2.13, an ordinal is ``finite'' if and only if it is a ``finite ordinal''. In fact, if \(\alpha\)~is not a ``finite ordinal'' then \(\omega\subset\alpha\), and it follows by induction on~\(n\) that there is no surjection \(n\to\omega\) (every function \(n\to\omega\) is bounded), hence there is no surjection \(n\to\alpha\), so \(\alpha\)~is not ``finite''. The converse is trivial.
 \end{rmk}
+
+\begin{rmk}
+In Theorem~2.27, the height of a well-ordering is just its order-type (ordinal), and the rank of an element in a well-ordering is just the order-type of the initial segment given by that element.
+\end{rmk}
+\begin{proof}
+If \(P\)~is a well-ordering and \(P(x)=\{\,y\in P\mid y<x\,\}\), then
+\[\type P=\sup_{x\in P}\{\,\type P(x)+1\,\}=\{\,\type P(x)\mid x\in P\,\}\]
+Indeed, if \(x\in P\) then \(\type P(x)<\type P\) (Theorem~2.8), so \(\type P(x)+1\le\type P\). Conversely, if \(\alpha<\type P\), then \(\alpha=\type P(x)\) for some \(x\in P\), so \(\alpha<\type P(x)+1\). Taking \(P=P(x)\) yields
+\[\type P(x)=\sup_{y<x}\{\,\type P(y)+1\,\}\]
+The result now follows by uniqueness of rank.
+\end{proof}
+
+\begin{rmk}
+If \(P\)~is a well-ordering and \(S\subset P\), then \(\type S\le\type P\).
+\end{rmk}
+\begin{proof}
+By induction using the previous remark,
+\[\type S=\sup_{x\in S}\{\,\type S(x)+1\,\}\le\sup_{x\in P}\{\,\type P(x)+1\,\}=\type P\qedhere\]
+\end{proof}
 
 \begin{exer}[2.2]
 \(\alpha\)~is a limit ordinal if and only if \(\beta<\alpha\) implies \(\beta+1<\alpha\) for all~\(\beta\).
@@ -320,7 +341,7 @@ If \(\kappa\) and~\(\lambda\) are cardinals (which are defined as a type of ordi
 \end{rmk}
 
 \begin{rmk}
-An ordinal is a ``finite'' cardinal if and only if it is a ``finite cardinal''. In fact, if a cardinal is ``finite'', then it is a ``finite ordinal'' by the remark on~(2.13) above, and hence it is a ``finite cardinal''. The converse is just the \emph{pigeonhole principle}, which is proved by induction on~\(\omega\).
+An ordinal is a ``finite'' cardinal if and only if it is a ``finite cardinal''. In fact, if a cardinal is ``finite'', then it is a ``finite ordinal'' by the remark above, and hence it is a ``finite cardinal''. The converse is just the \emph{pigeonhole principle}, which is proved by induction on~\(\omega\).
 \end{rmk}
 
 % References
