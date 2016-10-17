@@ -344,6 +344,71 @@ If \(\kappa\) and~\(\lambda\) are cardinals (which are defined as a type of ordi
 An ordinal is a ``finite'' cardinal if and only if it is a ``finite cardinal''. In fact, if a cardinal is ``finite'', then it is a ``finite ordinal'' by the remark above, and hence it is a ``finite cardinal''. The converse is just the \emph{pigeonhole principle}, which is proved by induction on~\(\omega\).
 \end{rmk}
 
+\begin{rmk}
+The arithmetic operations for finite cardinals in~(3.3) agree with the corresponding operations for finite ordinals.
+\end{rmk}
+
+\begin{exer}[3.1]\
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] A subset of a finite set is finite.
+\item[(ii)] A finite union of finite sets is finite.
+\item[(iii)] The power set of a finite set is finite.
+\item[(iv)] An image (projection) of a finite set is finite.
+\end{enumerate}
+\end{exer}
+\begin{proof}\
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] By an easy induction on \(n\in\N\), every subset of~\(n\) has at most \(n\)~elements, from which the result follows.
+
+Alternately, if \(B\subset A\), then \(\P(B)\subset\P(A)\), so \(X\subset\P(B)\) implies \(X\subset\P(A)\). If \(A\)~is finite, then \(A\)~is T-finite (Exercise~1.12), so \(B\)~is T-finite and hence \(B\)~is finite (Exercise~1.13).
+\item[(ii)] If \(\card{A}=m\) and \(\card{B}=n\) and \(A\sect B=\emptyset\), then \(\card{A\union B}=m+n\). If \(A\sect B\ne\emptyset\), then \(A\union B\)~is a subset of the disjoint union,\footnote{Technically, \(A\union B\)~has the same cardinality as a subset of \((A\times\{0\})\union(B\times\{1\})\).} so \(\card{A\union B}\le m+n\) by~(i). Therefore the union of two finite sets is finite, and the union of any finite set of finite sets is finite by induction.
+\item[(iii)] If \(\card{A}=n\), then \(\card{\P(A)}=2^n\) (Lemma~3.3).
+\item[(iv)] If \(f:n\to B\) is surjective, define \(g:B\to n\) by letting \(g(y)\)~be the least \(m\in n\) such that \(f(m)=y\). Then \(g\)~is injective, so \(B\)~has the same cardinality as a subset of~\(n\), and hence \(\card{B}\le n\) by~(i). The result follows.\qedhere
+\end{enumerate}
+\end{proof}
+
+\begin{exer}[3.2]\
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] A subset of a countable set is at most countable.
+\item[(ii)] A finite union of countable sets is countable.
+\item[(iii)] An image (projection) of a countable set is at most countable.
+\end{enumerate}
+\end{exer}
+\begin{proof}\
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] If \(B\subset\N\) is infinite, let
+\begin{align*}
+b_0&=\text{least in }B\\
+b_{n+1}&=\text{least in }B-\{b_0,\ldots,b_n\}\text{ (nonempty since \(B\)~is infinite)}
+\end{align*}
+Let \(C=\{\,b_n\mid n\in\N\,\}\), which is countable since \(n\mapsto b_n\) is a bijection. If \(B\ne C\), let \(b\)~be least in \(B-C\). There are only finitely many elements of~\(B\) less than~\(b\) (Exercise~3.1(i)), which must be \(b_0,\ldots,b_k\) for some \(k\in\N\) by hypothesis. But then \(b\)~is least in \(B-\{b_0,\ldots,b_k\}\), so \(b=b_{k+1}\in C\), which contradicts \(b\not\in C\). Therefore \(B=C\). The result follows.
+\item[(ii)] Similar to the proof of Exercise~3.1(ii), replacing \(m\) and~\(n\) with~\(\aleph_0\) and using the fact that \(\aleph_0\le\card{A\union B}\le\aleph_0+\aleph_0=\aleph_0\) (Theorem 3.5).
+\item[(iii)] Similar to the proof of Exercise~3.1(iv), replacing~\(n\) with~\(\N\).\qedhere
+\end{enumerate}
+\end{proof}
+
+\begin{exer}[3.3]
+\(\N\times\N\)~is countable.
+\end{exer}
+\begin{proof}
+The mapping \((m,n)\mapsto 2^m(2n+1)-1\) is a bijection from \(\N\times\N\) to~\(\N\). In fact, it is injective by uniqueness of prime factorizations. If \(k\in\N\), let \(m\in\N\) be the highest power of~\(2\) dividing~\(k+1\). Then \(k+1=2^m(2n+1)\) for some \(n\in\N\), so \(k\)~is the image of~\((m,n)\).
+\end{proof}
+
+\begin{exer}[3.4]\
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] The set of all finite sequences in~\(\N\) is countable.
+\item[(ii)] The set of all finite subsets of a countable set is countable.
+\end{enumerate}
+\end{exer}
+\begin{proof}\
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] The set is at least countable since there are countably many sequences of length one, and it is at most countable since the mapping
+\[(m_1,\ldots,m_n)\mapsto p_1^{m_1+1}\cdots p_n^{m_n+1}\]
+is injective, where \(p_k\)~is the \(k\)-th prime.
+\item[(ii)] The set of all finite subsets of~\(\N\) is at least countable since there are countably many singletons, and it is at most countable since it is the image of the mapping which takes each finite sequence in~\(\N\) to its underlying set (part~(i) and Exercise~3.2(iii)). The result follows.\qedhere
+\end{enumerate}
+\end{proof}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{jech} Jech, Thomas. \textit{Set Theory}, 3rd~ed. Springer, 2002.
