@@ -15,6 +15,7 @@
 \newcommand{\mult}{\cdot}
 
 \DeclareMathOperator{\type}{type}
+\DeclareMathOperator{\cf}{cf}
 
 \newcommand{\suc}[1]{#1\union\{#1\}}
 \newcommand{\preimage}[1]{#1_{-1}}
@@ -437,6 +438,13 @@ If \(X\subset\omega_{\alpha}\), then \(\type(X)\le\omega_{\alpha}\) by a remark 
 \end{exer}
 \begin{proof}
 \(\aleph_{\alpha+1}<2^{\aleph_{\alpha+1}}\le 2^{2^{\aleph_{\alpha}}}\), where the first inequality follows from Theorem~3.1 and the second inequality follows from Exercises~3.9--10.
+\end{proof}
+
+\begin{exer}[3.12]
+If \(\aleph_{\alpha}\)~is an uncountable limit cardinal, then \(\cf\omega_{\alpha}=\cf\alpha\); also, \(\omega_{\alpha}\)~is the limit of a cofinal sequence \(\seq{\,\omega_{\alpha_{\xi}}\mid\xi<\cf\alpha\,}\) of cardinals.\footnote{The second part of the exercise in the book is incorrect. For example, \(\omega_{\omega+\omega}\)~is not the limit of a cofinal sequence \(\seq{\,\omega_n\mid n<\omega\,}\).}
+\end{exer}
+\begin{proof}
+By Lemma~3.7(ii) and its proof, since \(\omega_{\alpha}=\lim_{\xi\to\alpha}\omega_{\xi}\).
 \end{proof}
 
 % References
