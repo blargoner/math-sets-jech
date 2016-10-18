@@ -363,7 +363,7 @@ The arithmetic operations for finite cardinals in~(3.3) agree with the correspon
 Alternately, if \(B\subset A\), then \(\P(B)\subset\P(A)\), so \(X\subset\P(B)\) implies \(X\subset\P(A)\). If \(A\)~is finite, then \(A\)~is T-finite (Exercise~1.12), so \(B\)~is T-finite and hence \(B\)~is finite (Exercise~1.13).
 \item[(ii)] If \(\card{A}=m\) and \(\card{B}=n\) and \(A\sect B=\emptyset\), then \(\card{A\union B}=m+n\). If \(A\sect B\ne\emptyset\), then \(A\union B\)~is a subset of the disjoint union,\footnote{Technically, \(A\union B\)~has the same cardinality as a subset of \((A\times\{0\})\union(B\times\{1\})\).} so \(\card{A\union B}\le m+n\) by~(i). Therefore the union of two finite sets is finite, and the union of any finite set of finite sets is finite by induction.
 \item[(iii)] If \(\card{A}=n\), then \(\card{\P(A)}=2^n\) (Lemma~3.3).
-\item[(iv)] If \(f:n\to B\) is surjective, define \(g:B\to n\) by letting \(g(y)\)~be the least \(m\in n\) such that \(f(m)=y\). Then \(g\)~is injective, so \(B\)~has the same cardinality as a subset of~\(n\), and hence \(\card{B}\le n\) by~(i). The result follows.\qedhere
+\item[(iv)] If \(f:n\to B\) is surjective, define \(g:B\to n\) by letting \(g(b)\)~be the least \(m\in n\) such that \(f(m)=b\). Then \(g\)~is injective, so \(B\)~has the same cardinality as a subset of~\(n\), and hence \(\card{B}\le n\) by~(i). The result follows.\qedhere
 \end{enumerate}
 \end{proof}
 
@@ -407,6 +407,36 @@ The mapping \((m,n)\mapsto 2^m(2n+1)-1\) is a bijection from \(\N\times\N\) to~\
 is injective, where \(p_k\)~is the \(k\)-th prime.
 \item[(ii)] The set of all finite subsets of~\(\N\) is at least countable since there are countably many singletons, and it is at most countable since it is the image of the mapping which takes each finite sequence in~\(\N\) to its underlying set (part~(i) and Exercise~3.2(iii)). The result follows.\qedhere
 \end{enumerate}
+\end{proof}
+
+\begin{exer}[3.7]
+If \(B\)~is a projection of~\(\omega_{\alpha}\), then \(\card{B}\le\aleph_{\alpha}\).
+\end{exer}
+\begin{proof}
+If \(f:\omega_{\alpha}\to B\) is surjective, define \(g:B\to\omega_{\alpha}\) by letting \(g(b)\)~be the least \(\beta\in\omega_{\alpha}\) such that \(f(\beta)=b\). Then \(g\)~is injective, so \(\card{B}\le\aleph_{\alpha}\).
+\end{proof}
+
+\begin{exer}[3.9]
+If \(B\)~is a projection of~\(A\), then \(\card{\P(B)}\le\card{\P(A)}\).
+\end{exer}
+\begin{proof}
+If \(f:A\to B\) is surjective, define \(g:\P(B)\to\P(A)\) by \(g(X)=\preimage{f}(X)\). If \(g(X)=g(Y)\), then
+\[X=f(g(X))=f(g(Y))=Y\]
+by surjectivity of~\(f\), so \(g\)~is injective.
+\end{proof}
+
+\begin{exer}[3.10]
+\(\omega_{\alpha+1}\)~is a projection of~\(\P(\omega_{\alpha})\).
+\end{exer}
+\begin{proof}
+If \(X\subset\omega_{\alpha}\), then \(\type(X)\le\omega_{\alpha}\) by a remark about well-orderings above, so we can define \(f:\P(\omega_{\alpha})\to\omega_{\alpha+1}\) by \(f(X)=\type(X)\). If \(\beta\in\omega_{\alpha+1}\), then \(\beta\subset\omega_{\alpha}\) with \(f(\beta)=\beta\), so \(f\)~is surjective.
+\end{proof}
+
+\begin{exer}[3.11]
+\(\aleph_{\alpha+1}<2^{2^{\aleph_{\alpha}}}\)
+\end{exer}
+\begin{proof}
+\(\aleph_{\alpha+1}<2^{\aleph_{\alpha+1}}\le 2^{2^{\aleph_{\alpha}}}\), where the first inequality follows from Theorem~3.1 and the second inequality follows from Exercises~3.9--10.
 \end{proof}
 
 % References
