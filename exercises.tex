@@ -447,6 +447,13 @@ If \(\aleph_{\alpha}\)~is an uncountable limit cardinal, then \(\cf\omega_{\alph
 By Lemma~3.7(ii) and its proof, since \(\omega_{\alpha}=\lim_{\xi\to\alpha}\omega_{\xi}\).
 \end{proof}
 
+\begin{exer}[3.13]
+(ZF) \(\omega_2\)~is not a countable union of countable sets.
+\end{exer}
+\begin{proof}
+If \(\omega_2=\bigunion_{n<\omega} S_n\) where each~\(S_n\) is countable, let \(\alpha_n=\type S_n<\omega_1\). Then \(\alpha=\sup_n\alpha_n\le\omega_1\). For \((n,\xi)\in\omega\times\alpha\), let \(f(n,\xi)\)~be the \(\xi\)-th element of~\(S_n\) if \(\xi\in\alpha_n\) or the first element of~\(S_n\) if \(\xi\not\in\alpha_n\). Then \(f:\omega\times\alpha\to\omega_2\) is surjective. But \(0<\card{\omega\times\alpha}\le\aleph_0\mult\aleph_1=\aleph_1\), so \(\omega_2\)~is a projection of~\(\omega_1\) and \(\aleph_2\le\aleph_1\)---contradicting \(\aleph_1<\aleph_2\). Therefore \(\omega_2\)~is not a countable union of countable sets.
+\end{proof}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{jech} Jech, Thomas. \textit{Set Theory}, 3rd~ed. Springer, 2002.
