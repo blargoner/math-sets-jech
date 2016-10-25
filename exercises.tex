@@ -14,6 +14,8 @@
 \newcommand{\after}{\circ}
 \newcommand{\mult}{\cdot}
 
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\ran}{ran}
 \DeclareMathOperator{\type}{type}
 \DeclareMathOperator{\cf}{cf}
 
@@ -430,7 +432,7 @@ by surjectivity of~\(f\), so \(g\)~is injective.
 \(\omega_{\alpha+1}\)~is a projection of~\(\P(\omega_{\alpha})\).
 \end{exer}
 \begin{proof}
-If \(X\subset\omega_{\alpha}\), then \(\type(X)\le\omega_{\alpha}\) by a remark about well-orderings above, so we can define \(f:\P(\omega_{\alpha})\to\omega_{\alpha+1}\) by \(f(X)=\type(X)\). If \(\beta\in\omega_{\alpha+1}\), then \(\beta\subset\omega_{\alpha}\) with \(f(\beta)=\beta\), so \(f\)~is surjective.
+If \(X\subset\omega_{\alpha}\), then \(\type X\le\omega_{\alpha}\) by a remark about well-orderings above, so we can define \(f:\P(\omega_{\alpha})\to\omega_{\alpha+1}\) by \(f(X)=\type X\). If \(\beta\in\omega_{\alpha+1}\), then \(\beta\subset\omega_{\alpha}\) with \(f(\beta)=\beta\), so \(f\)~is surjective.
 \end{proof}
 
 \begin{exer}[3.11]
@@ -466,6 +468,43 @@ s_{n+1}&\text{if }s=s_n\\
 s&\text{if }s\ne s_n\text{ for all }n
 \end{cases}\]
 Then \(f\)~is a bijection from~\(S\) to \(S-\{s_0\}\), so \(S\)~is D-infinite.
+\end{proof}
+
+\begin{exer}[3.15]\
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] If \(A\)~and~\(B\) are D-finite, then \(A\union B\) and~\(A\times B\) are D-finite.
+\item[(ii)] The set of all finite injective sequences in a D-finite set is D-finite.
+\item[(iii)] The union of a disjoint D-finite family of D-finite sets is D-finite.
+\end{enumerate}
+\end{exer}
+\begin{proof}
+In all cases we use the fact that a set is D-infinite if and only if it has a countable subset (Exercise~3.14).
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] If \(A\union B\)~is not D-finite, let \(n\mapsto s_n\in A\union B\) be injective. If \(A\)~is D-finite, there must be~\(N\) such that for all \(n\ge N\), \(s_n\not\in A\), so \(s_n\in B\). But then \(n\mapsto s_{N+n}\in B\) is injective, so \(B\)~is not D-finite.
+
+If \(A\times B\)~is not D-finite, let \(R\subset A\times B\) be countable. If \(\dom R\)~is infinite, then we can enumerate a countable subset of~\(A\) using an enumeration of~\(R\), so \(A\)~is not D-finite. If \(\dom R\)~is finite, then \(\ran R\)~must be infinite, so we can enumerate a countable subset of~\(B\) using an enumeration of~\(R\), and hence \(B\)~is not D-finite.
+\item[(ii)] Let \(S\)~be a set. If \(n\mapsto f_n\) is injective with \(f_n:l_n\to S\) injective and \(l_n\in\N\) for all \(n\in\N\), choose \(k_0\)~least with \(l_{k_0}\ne 0\) and define
+\begin{align*}
+s_0&=f_{k_0}(0)&&\\
+s_{n+1}&=f_k(m)&&k\text{ least such that }\ran f_k\not\subset\{s_0,\ldots,s_n\}\\
+	&&&m\text{ least such that }f_k(m)\not\in\{s_0,\ldots,s_n\}
+\end{align*}
+Note \(k\)~must exist since there are only finitely many injective sequences in a finite set. Clearly \(n\mapsto s_n\) is injective, so \(S\)~is D-infinite.
+\item[(iii)] Let \(S\)~be a set of disjoint D-finite sets. If \(n\mapsto s_n\in\bigunion S\) is injective, define
+\begin{align*}
+x_0&=\text{the unique set in~\(S\) containing~\(s_0\)}\\
+x_{n+1}&=\text{the unique set in~\(S\) containing~\(s_k\)}\\
+	&\quad k\text{ least such that }s_k\not\in\bigunion\{x_0,\ldots,x_n\}
+\end{align*}
+Note \(k\)~must exist since for each \(x\in S\) there is~\(N\) with \(s_n\not\in x\) for all \(n\ge N\). Clearly \(n\mapsto x_n\) is injective, so \(S\)~is D-infinite.\qedhere
+\end{enumerate}
+\end{proof}
+
+\begin{exer}[3.16]
+If \(A\)~is infinite, then \(\P(\P(A))\)~is D-infinite.
+\end{exer}
+\begin{proof}
+The mapping \(n\mapsto\{\,X\subset A\mid\card{X}=n\,\}\) is injective (Exercise~3.14).
 \end{proof}
 
 % References
