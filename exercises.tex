@@ -361,7 +361,7 @@ The arithmetic operations for finite cardinals in~(3.3) agree with the correspon
 \end{exer}
 \begin{proof}\
 \begin{enumerate}[itemsep=0pt]
-\item[(i)] By an easy induction on \(n\in\N\), every subset of~\(n\) has at most \(n\)~elements, from which the result follows.
+\item[(i)] By an easy induction on \(n\in\N\), every subset of~\(n\) has \(m\)~elements for some \(m\in\N\) with \(m\le n\), from which the result follows.
 
 Alternately, if \(B\subset A\), then \(\P(B)\subset\P(A)\), so \(X\subset\P(B)\) implies \(X\subset\P(A)\). If \(A\)~is finite, then \(A\)~is T-finite (Exercise~1.12), so \(B\)~is T-finite and hence \(B\)~is finite (Exercise~1.13).
 \item[(ii)] If \(\card{A}=m\) and \(\card{B}=n\) and \(A\sect B=\emptyset\), then \(\card{A\union B}=m+n\). If \(A\sect B\ne\emptyset\), then \(A\union B\)~is a subset of the disjoint union,\footnote{Technically, \(A\union B\)~has the same cardinality as a subset of \((A\times\{0\})\union(B\times\{1\})\).} so \(\card{A\union B}\le m+n\) by~(i). Therefore the union of two finite sets is finite, and the union of any finite set of finite sets is finite by induction.
@@ -469,6 +469,10 @@ s&\text{if }s\ne s_n\text{ for all }n
 \end{cases}\]
 Then \(f\)~is a bijection from~\(S\) to \(S-\{s_0\}\), so \(S\)~is D-infinite.
 \end{proof}
+
+\begin{rmk}
+It follows that a D-finite subset of a countable set must be finite, since an infinite subset of a countable set is countable (Exercise~3.2(i)).
+\end{rmk}
 
 \begin{exer}[3.15]\
 \begin{enumerate}[itemsep=0pt]
