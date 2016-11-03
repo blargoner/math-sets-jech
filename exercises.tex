@@ -4,8 +4,11 @@
 \usepackage{amsmath,amssymb,amsthm,enumitem,fourier}
 
 \newcommand{\N}{\boldsymbol{N}}
+\newcommand{\Q}{\boldsymbol{Q}}
+\newcommand{\R}{\boldsymbol{R}}
 \renewcommand{\P}{P}
 \newcommand{\Ord}{\mathit{Ord}}
+\newcommand{\cc}{\mathfrak{c}}
 
 \newcommand{\union}{\cup}
 \newcommand{\bigunion}{\bigcup}
@@ -519,6 +522,22 @@ In Definition~4.2, a ``dense subset'' of a linear ordering is a subset that is `
 \begin{rmk}
 In Theorem~4.4, property~(iii) of a Dedekind cut is not needed for this purely order-theoretic construction.\footnote{See \cite{rudin}, Chapter~1, Exercise~20.}
 \end{rmk}
+
+\begin{exer}[4.1]
+The set of all continuous functions \(f:\R\to\R\) has cardinality~\(\cc\), while \(\card{\R^{\R}}=2^{\cc}\).
+\end{exer}
+\begin{proof}
+By definition \(\card{\R^{\R}}=\cc^{\cc}\), and \(2^{\cc}\le\cc^{\cc}\le(2^{\cc})^{\cc}=2^{\cc\mult\cc}=2^{\cc}\) since \(\cc\mult\cc=2^{\aleph_0}\mult 2^{\aleph_0}=2^{\aleph_0+\aleph_0}=2^{\aleph_0}=\cc\).
+
+There are at least~\(\cc\) continuous functions since the constant functions are continuous. Conversely, there are at most~\(\cc\) since a continuous function on~\(\R\) is determined by its values on the dense subset~\(\Q\), so the mapping \(f\mapsto f\restriction\Q\) is injective, and \(\card{\R^{\Q}}=\cc^{\aleph_0}=(2^{\aleph_0})^{\aleph_0}=2^{\aleph_0\mult\aleph_0}=2^{\aleph_0}=\cc\).
+\end{proof}
+
+\begin{exer}[4.3]
+The set of all algebraic reals is countable.
+\end{exer}
+\begin{proof}
+The set is at least countable since the rationals are algebraic (\(m/n\)~is a root of the polynomial \(nx-m\)). Conversely, it is at most countable since there are only countably many nonzero polynomials with integer coefficients (Exercise~3.4(i)) each of which has only finitely many real roots, and a countable union of finite ordered sets is countable. (If \(S\)~is a countable family of finite ordered sets, then it is possible to enumerate a countable subset of~\(\bigunion S\) and to define an injection \(\bigunion S\to\omega\times\omega\).)
+\end{proof}
 
 % References
 \begin{thebibliography}{0}
