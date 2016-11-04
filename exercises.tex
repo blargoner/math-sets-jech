@@ -539,6 +539,32 @@ The set of all algebraic reals is countable.
 The set is at least countable since the rationals are algebraic (\(m/n\)~is a root of the polynomial \(nx-m\)). Conversely, it is at most countable since there are only countably many nonzero polynomials with integer coefficients (Exercise~3.4(i)) each of which has only finitely many real roots, and a countable union of finite ordered sets is countable. (If \(S\)~is a countable family of finite ordered sets, then it is possible to enumerate a countable subset of~\(\bigunion S\) and to define an injection \(\bigunion S\to\omega\times\omega\).)
 \end{proof}
 
+\begin{exer}[4.4]
+If \(S\subset\R\) is countable, then \(\card{\R-S}=\cc\).
+\end{exer}
+\begin{proof}
+It is sufficient to prove that if \(S\subset\R\times\R\) is countable, then \(\card{\R\times\R-S}=\cc\), since \(\card{\R\times\R}=\card{\R}\). It cannot be that for every \(x\in\R\) there is \(y\in\R\) with \((x,y)\in S\), lest \(S\)~would be uncountable. Hence there is \(x\in\R\) with \(\{x\}\times\R\sect S=\emptyset\), that is, \(\{x\}\times\R\subset\R\times\R-S\), so \(\cc=\card{\{x\}\times\R}\le\card{\R\times\R-S}\le\cc\).
+\end{proof}
+
+\begin{exer}[4.5]\
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] The set of all irrational numbers has cardinality~\(\cc\).
+\item[(ii)] The set of all transcendental numbers has cardinality~\(\cc\).
+\end{enumerate}
+\end{exer}
+\begin{proof}
+By Exercises 4.3 and~4.4.
+\end{proof}
+
+\begin{exer}[4.6]
+The set of all open sets of reals has cardinality~\(\cc\).
+\end{exer}
+\begin{proof}
+The set has cardinality at least~\(\cc\) since \(r\mapsto(r,r+1)\) is injective. The set has cardinality at most~\(\cc\) since the mapping
+\[O\mapsto\{\,(p,q)\in\Q\times\Q\mid\text{the interval }(p,q)\subset O\,\}\]
+for open sets~\(O\) is injective by density of~\(\Q\) in~\(\R\), and \(\card{\P(\Q\times\Q)}=2^{\aleph_0}=\cc\).
+\end{proof}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{jech} Jech, Thomas. \textit{Set Theory}, 3rd~ed. Springer, 2002.
