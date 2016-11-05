@@ -6,6 +6,7 @@
 \newcommand{\N}{\boldsymbol{N}}
 \newcommand{\Q}{\boldsymbol{Q}}
 \newcommand{\R}{\boldsymbol{R}}
+\newcommand{\C}{\boldsymbol{C}}
 \renewcommand{\P}{P}
 \newcommand{\Ord}{\mathit{Ord}}
 \newcommand{\cc}{\mathfrak{c}}
@@ -563,6 +564,27 @@ The set of all open sets of reals has cardinality~\(\cc\).
 The set has cardinality at least~\(\cc\) since \(r\mapsto(r,r+1)\) is injective. The set has cardinality at most~\(\cc\) since the mapping
 \[O\mapsto\{\,(p,q)\in\Q\times\Q\mid\text{the interval }(p,q)\subset O\,\}\]
 for open sets~\(O\) is injective by density of~\(\Q\) in~\(\R\), and \(\card{\P(\Q\times\Q)}=2^{\aleph_0}=\cc\).
+\end{proof}
+
+\begin{exer}[4.7]
+The Cantor set~\(\C\) is perfect.
+\end{exer}
+\begin{proof}
+\(\C\ne\emptyset\) since \(0\in\C\), \(\C\)~is closed since it is the complement in~\([0,1]\) of the union of the open intervals removed in the construction, and every point in~\(\C\) is the limit of a set of endpoints of those intervals, all of which are in~\(\C\).
+\end{proof}
+
+\begin{exer}[4.8]
+If \(P\)~is perfect and \(P\sect(a,b)\ne\emptyset\), then \(\card{P\sect(a,b)}=\cc\).
+\end{exer}
+\begin{proof}
+Define \(\alpha=\inf(P\sect(a,b))\) and \(\beta=\sup(P\sect(a,b))\). Then \(a\le\alpha<\beta\le b\) and \(\alpha,\beta\in P\). Moreover, \(P\sect[\alpha,\beta]\) is perfect, since in particular \(\alpha\) and~\(\beta\) are not isolated points. So \(\cc=\card{P\sect[\alpha,\beta]}\le\card{P\sect[a,b]}\) (Theorem~4.5), from which the result follows.
+\end{proof}
+
+\begin{exer}[4.9]
+If \(P_2\not\subset P_1\) are perfect sets, then \(\card{P_2-P_1}=\cc\).
+\end{exer}
+\begin{proof}
+If \(x\in P_2-P_1\), then by closure of~\(P_1\) there is~\((a,b)\) with \(x\in(a,b)\) and \(P_1\sect(a,b)=\emptyset\). Now \(P_2\sect(a,b)\ne\emptyset\) and \(P_2\sect(a,b)\subset P_2-P_1\), so \(\cc=\card{P_2\sect(a,b)}\le\card{P_2-P_1}\) (Exercise~4.8).
 \end{proof}
 
 % References
