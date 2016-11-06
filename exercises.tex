@@ -27,6 +27,7 @@
 \newcommand{\preimage}[1]{#1_{-1}}
 \newcommand{\card}[1]{|#1|}
 \newcommand{\seq}[1]{\langle#1\rangle}
+\newcommand{\cond}[1]{#1^*}
 
 % Theorems
 \theoremstyle{definition}
@@ -581,10 +582,24 @@ Define \(\alpha=\inf(P\sect(a,b))\) and \(\beta=\sup(P\sect(a,b))\). Then \(a\le
 \end{proof}
 
 \begin{exer}[4.9]
-If \(P_2\not\subset P_1\) are perfect sets, then \(\card{P_2-P_1}=\cc\).
+If \(F\)~is closed and \(P\not\subset F\) is perfect, then \(\card{P-F}=\cc\).
 \end{exer}
 \begin{proof}
-If \(x\in P_2-P_1\), then by closure of~\(P_1\) there is~\((a,b)\) with \(x\in(a,b)\) and \(P_1\sect(a,b)=\emptyset\). Now \(P_2\sect(a,b)\ne\emptyset\) and \(P_2\sect(a,b)\subset P_2-P_1\), so \(\cc=\card{P_2\sect(a,b)}\le\card{P_2-P_1}\) (Exercise~4.8).
+If \(x\in P-F\), then by closure of~\(F\) there is~\((a,b)\) with \(x\in(a,b)\) and \(F\sect(a,b)=\emptyset\). Now \(P\sect(a,b)\ne\emptyset\) and \(P\sect(a,b)\subset P-F\), so \(\cc=\card{P\sect(a,b)}\le\card{P-F}\) (Exercise~4.8).
+\end{proof}
+
+\begin{exer}[4.10]
+If \(P\)~is perfect, then \(\cond{P}=P\).
+\end{exer}
+\begin{proof}
+If \(x\in\cond{P}\), then \(x\)~is a limit point of~\(P\), so \(x\in P\) by closure of~\(P\). Conversely if \(x\in P\sect(a,b)\), then \(\card{P\sect(a,b)}=\cc\) (Exercise~4.8), so \(x\in\cond{P}\).
+\end{proof}
+
+\begin{exer}[4.11]
+If \(P\subset A\) is perfect, then \(P\subset\cond{A}\).
+\end{exer}
+\begin{proof}
+\(P=\cond{P}\subset\cond{A}\) (Exercise~4.10).
 \end{proof}
 
 % References
