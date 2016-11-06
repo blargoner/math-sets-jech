@@ -5,11 +5,15 @@
 
 \newcommand{\N}{\boldsymbol{N}}
 \newcommand{\Q}{\boldsymbol{Q}}
+\newcommand{\I}{\boldsymbol{I}}
 \newcommand{\R}{\boldsymbol{R}}
 \newcommand{\C}{\boldsymbol{C}}
 \renewcommand{\P}{P}
 \newcommand{\Ord}{\mathit{Ord}}
 \newcommand{\cc}{\mathfrak{c}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\Gd}{G_{\delta}}
 
 \newcommand{\union}{\cup}
 \newcommand{\bigunion}{\bigcup}
@@ -28,6 +32,7 @@
 \newcommand{\card}[1]{|#1|}
 \newcommand{\seq}[1]{\langle#1\rangle}
 \newcommand{\cond}[1]{#1^*}
+\newcommand{\abs}[1]{|#1|}
 
 % Theorems
 \theoremstyle{definition}
@@ -592,7 +597,7 @@ If \(x\in P-F\), then by closure of~\(F\) there is~\((a,b)\) with \(x\in(a,b)\) 
 If \(P\)~is perfect, then \(\cond{P}=P\).
 \end{exer}
 \begin{proof}
-If \(x\in\cond{P}\), then \(x\)~is a limit point of~\(P\), so \(x\in P\) by closure of~\(P\). Conversely if \(x\in P\sect(a,b)\), then \(\card{P\sect(a,b)}=\cc\) (Exercise~4.8), so \(x\in\cond{P}\).
+If \(x\in\cond{P}\), then \(x\)~is a limit point of~\(P\), so \(x\in P\) by closure of~\(P\). Conversely if \(x\in P\sect(a,b)\), then \(P\sect(a,b)\)~is uncountable (Exercise~4.8), so \(x\in\cond{P}\).
 \end{proof}
 
 \begin{exer}[4.11]
@@ -602,8 +607,46 @@ If \(P\subset A\) is perfect, then \(P\subset\cond{A}\).
 \(P=\cond{P}\subset\cond{A}\) (Exercise~4.10).
 \end{proof}
 
+\begin{exer}[4.12]
+If \(F\)~is an uncountable closed set and \(P\)~is the perfect subset of~\(F\) constructed in the Cantor-Bendixon theorem (Theorem~4.6), then \(P=\cond{F}\).
+\end{exer}
+\begin{proof}
+We know \(P\subset\cond{F}\) (Exercise~4.11). If \(x\in\cond{F}\), then every neighborhood of~\(x\) contains uncountably many points of~\(F\), and hence a point of~\(P\) since \(F-P\)~is at most countable. Therefore \(x\in P\) by closure of~\(P\).
+\end{proof}
+
+\begin{exer}[4.13]
+If \(F\)~is an uncountable closed set, then \(F=\cond{F}\union(F-\cond{F})\) is the unique partition\footnote{We allow that \(F-\cond{F}\)~may be empty.} of~\(F\) into a perfect subset and an at most countable subset.
+\end{exer}
+\begin{proof}
+We know that \(\cond{F}\union(F-\cond{F})\) is such a partition (Exercise~4.12). If \(P\union S\)~is another such partition and \(P\ne\cond{F}\), then \(P\not\subset\cond{F}\) or \(\cond{F}\not\subset P\), so \(S\)~is uncountable or \(F-\cond{F}\)~is uncountable (Exercise~4.9)---a contradiction.
+\end{proof}
+
+\begin{exer}[4.14]
+\(\Q\)~is not a countable intersection of open sets.
+\end{exer}
+\begin{proof}
+If \(\Q=\bigsect O_n\) with \(O_n\)~open, then \(\Q\subset O_n\) and hence \(O_n\)~is dense in~\(\R\) for all~\(n\). It follows that \(\I=\bigunion(\R-O_n)\) is a countable union of closed nowhere dense sets, and since \(\Q\)~is a countable union of nowhere dense singletons, \(\R=\Q\union\I\) is a countable union of nowhere dense sets---contradicting the Baire category theorem (Theorem~4.8).
+\end{proof}
+
+\begin{exer}[4.15]
+If \(B\)~is Borel and \(f:\R\to\R\) is continuous, then \(\preimage{f}(B)\)~is Borel.
+\end{exer}
+\begin{proof}
+By induction on the Borel sets~\(\B\). Let
+\[\CC=\{\,X\subset\R\mid\preimage{f}(X)\in\B\,\}\]
+Then \(\R\in\CC\) since \(\preimage{f}(\R)=\R\in\B\). If \(X\in\CC\), then \(\preimage{f}(\R-X)=\R-\preimage{f}(X)\in\B\), so \(\R-X\in\CC\). If \(X_n\in\CC\), then \(\preimage{f}(\bigunion X_n)=\bigunion\preimage{f}(X_n)\in\B\), so \(\bigunion X_n\in\CC\). Finally, if \(O\)~is open, then \(\preimage{f}(O)\)~is open by continuity of~\(f\), so \(\preimage{f}(O)\in\B\) and \(O\in\CC\). Therefore \(\CC\)~is a \(\sigma\)-algebra containing the open sets, so \(\B\subset\CC\).
+\end{proof}
+
+\begin{exer}[4.16]
+If \(f:\R\to\R\), the set of points where \(f\)~is continuous is~\(\Gd\).
+\end{exer}
+\begin{proof}
+For \(\alpha>0\), \(f\)~is \emph{\(\alpha\)-continuous at~\(x\)} if there is \(\delta>0\) such that \(\abs{f(y)-f(z)}<\alpha\) for all \(y,z\in(x-\delta,x+\delta)\).\footnote{See \cite{abbott}, Definition~4.6.5.} If \(C\)~is the set of points where \(f\)~is continuous and \(C_n\)~is the set of points where \(f\)~is \(1/n\)-continuous, then \(C_n\)~is open for all~\(n\) and \(C=\bigsect C_n\).
+\end{proof}
+
 % References
 \begin{thebibliography}{0}
+\bibitem{abbott} Abbott, Stephen. \textit{Understanding Analysis}. Springer, 2001.
 \bibitem{jech} Jech, Thomas. \textit{Set Theory}, 3rd~ed. Springer, 2002.
 \bibitem{rudin} Rudin, Walter. \textit{Principles of Mathematical Analysis}, 3rd~ed. McGraw-Hill, 1976.
 \end{thebibliography}
