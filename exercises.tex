@@ -30,6 +30,7 @@
 \newcommand{\suc}[1]{#1\union\{#1\}}
 \newcommand{\preimage}[1]{#1_{-1}}
 \newcommand{\card}[1]{|#1|}
+\newcommand{\bigcard}[1]{\bigl|#1\bigr|}
 \newcommand{\seq}[1]{\langle#1\rangle}
 \newcommand{\cond}[1]{#1^*}
 \newcommand{\abs}[1]{|#1|}
@@ -644,6 +645,30 @@ If \(f:\R\to\R\), the set of points where \(f\)~is continuous is~\(\Gd\).
 For \(\alpha>0\), \(f\)~is \emph{\(\alpha\)-continuous at~\(x\)} if there is \(\delta>0\) such that \(\abs{f(y)-f(z)}<\alpha\) for all \(y,z\in(x-\delta,x+\delta)\).\footnote{See \cite{abbott}, Definition~4.6.5.} If \(C\)~is the set of points where \(f\)~is continuous and \(C_n\)~is the set of points where \(f\)~is \(1/n\)-continuous, then \(C_n\)~is open for all~\(n\) and \(C=\bigsect C_n\).
 \end{proof}
 
+\section*{Chapter~5}
+\begin{rmk}
+If \(\kappa\)~is infinite and \(\card{A}\ge\kappa\), then \(\card{[A]^{<\kappa}}=\card{A}^{<\kappa}\).
+\end{rmk}
+\begin{proof}
+Since \([A]^{<\kappa}=\bigunion_{\lambda<\kappa}[A]^{\lambda}\) is a partition, we have (Lemmas 5.7--8)
+\[\card{[A]^{<\kappa}}=\sum_{\lambda<\kappa}\card{A}^{\lambda}=\kappa\mult\sup_{\lambda<\kappa}\card{A}^{\lambda}=\kappa\mult\card{A}^{<\kappa}=\card{A}^{<\kappa}\qedhere\]
+\end{proof}
+
+\begin{rmk}
+An infinite cardinal~\(\kappa\) is singular if and only if \(\kappa=\sum_{i<\lambda}\kappa_i\) for cardinals \(\lambda<\kappa\) and \(\kappa_i<\kappa\) for all \(i<\lambda\).
+\end{rmk}
+\begin{proof}
+If \(\kappa\)~is singular, let \(\lambda=\cf\kappa<\kappa\) and choose \(S_i\subset\kappa\) with \(\kappa_i=\card{S_i}<\kappa\) and \(\kappa=\bigunion_{i<\lambda}S_i\) (Lemma~3.10). Then
+\[\kappa=\bigcard{\bigunion_{i<\lambda}S_i}\le\sum_{i<\lambda}\kappa_i\le\lambda\mult\kappa=\kappa\]
+The converse follows from Lemma~3.10.
+\end{proof}
+
+\begin{rmk}
+If \(\kappa_i\ge 2\) for \(1\le i\le n\), then \(\sum\kappa_i\le\prod\kappa_i\).
+\end{rmk}
+\begin{proof}
+\[2^{n-1}\sum_{i=1}^n\kappa_i\le n\prod_{i=1}^n\kappa_i\le 2^{n-1}\prod_{i=1}^n\kappa_i\qedhere\]
+\end{proof}
 
 % References
 \begin{thebibliography}{0}
