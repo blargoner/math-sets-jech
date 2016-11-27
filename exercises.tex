@@ -674,6 +674,52 @@ If \(\kappa_i\ge 2\) for \(1\le i\le n\), then \(\sum\kappa_i\le\prod\kappa_i\).
 Properties of singular cardinals may be determined by properties of regular cardinals below. For example, the continuum function is continuous at singular cardinals below which it is eventually constant (Corollary~5.17). This idea is extended by~SCH (Theorem~5.22).
 \end{rmk}
 
+\begin{exer}[5.2]
+If \(X\)~is infinite and \(S\)~is the set of finite subsets of~\(X\), then \(\card{S}=\card{X}\).
+\end{exer}
+\begin{proof}
+\(\card{X}\le\card{S}\) since \(x\mapsto\{x\}\) is injective. Conversely, \(S\)~is the projection of the set \(X^{<\omega}=\bigunion_{n<\omega}X^n\) of finite sequences in~\(X\) under the mapping which takes each sequence to its underlying set. Therefore (by~(5.2))
+\[\card{S}\le\card{X^{<\omega}}=\sum_{n<\omega}\card{X}^n=\aleph_0\mult\card{X}=\card{X}\qedhere\]
+\end{proof}
+\begin{rmk}
+This generalizes Exercise~3.4(ii).
+\end{rmk}
+
+\begin{exer}[5.3]
+If \(P\)~is a linear ordering such that every initial segment of~\(P\) has cardinality \(<\kappa\), then \(\card{P}\le\kappa\).
+\end{exer}
+\begin{proof}
+Call \(S\subset P\) \emph{cofinal} in~\(P\) if for all \(x\in P\) there is \(y\in S\) with \(x\le y\). If \(S\)~is not cofinal in~\(P\), choose \(F(S)\in P\) with \(F(S)>y\) for all \(y\in S\). By recursion on the ordinals, define
+\[x_{\alpha}=F(\{\,x_{\xi}\mid\xi<\alpha\,\})\quad\text{if }\{\,x_{\xi}\mid\xi<\alpha\,\}\text{ is not cofinal in~\(P\)}\]
+Let \(\theta\)~be the least ordinal at which the recursion cannot continue. If \(\theta=0\), then the result is trivial. If \(\theta=\alpha+1\), then \(x_{\alpha}\)~is greatest in~\(P\), so \(P=P(x_{\alpha})\union\{x_{\alpha}\}\) and \(\card{P}\le\kappa\). If \(\theta>0\) is a limit ordinal, then
+\[P=\bigunion_{\alpha<\theta}P(x_{\alpha})\]
+Also \(\aleph_0\le\card{\theta}\le\kappa\), lest \(\card{P(x_{\kappa+1})}\ge\kappa\). Therefore \(\card{P}\le\kappa\mult\kappa=\kappa\).
+\end{proof}
+
+\begin{exer}[5.4]
+If \(A\)~can be well-ordered, then \(P(A)\)~can be linearly ordered.
+\end{exer}
+\begin{proof}
+Identify \(P(A)\) with \(2^A\) and order \(2^A\) with the lexicographic order: \(f<g\) if \(f(x)<g(x)\) at the least \(x\in A\) where \(f(x)\ne g(x)\).
+\end{proof}
+\begin{rmk}
+The lexicographic order is not in general a well-ordering. For example, consider \(2^{\N}\)~and the subset \(2^{\N}-\{0\}\).
+\end{rmk}
+
+\begin{exer}[5.5]
+ZF + ZL implies AC.
+\end{exer}
+\begin{proof}
+If \(C\)~is a set of nonempty sets, let \(P\)~be the set of ``partial'' choice functions for~\(C\) partially ordered by inclusion: \(f:S\to\bigunion C\) with \(S\subset C\) and \(f(X)\in X\) for all \(X\in S\). Then \(\emptyset\in P\) and every chain in~\(P\) has its union as an upper bound. By ZL, there is a maximal element \(F\in P\). Now \(\dom F=X\), lest \(F\)~can be properly extended and is not maximal, so \(F\)~is a choice function for~\(C\).
+\end{proof}
+
+\begin{exer}[5.6]
+ZF + CC implies that every infinite set has a countable subset.
+\end{exer}
+\begin{proof}
+If \(X\)~is infinite, choose an injection \(f_n:n\to X\) for all \(n\in\N\) by~CC and recursively define \(g:\N\to X\) by \(g(n)=f_{2^n}(k)\) where \(k\)~is least such that \(f_{2^n}(k)\ne g(m)\) for all \(m<n\). Then \(g\)~is injective.
+\end{proof}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{abbott} Abbott, Stephen. \textit{Understanding Analysis}. Springer, 2001.
