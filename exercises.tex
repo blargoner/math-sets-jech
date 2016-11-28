@@ -28,6 +28,7 @@
 \DeclareMathOperator{\cf}{cf}
 
 \newcommand{\suc}[1]{#1\union\{#1\}}
+\newcommand{\csuc}[1]{#1^+}
 \newcommand{\preimage}[1]{#1_{-1}}
 \newcommand{\card}[1]{|#1|}
 \newcommand{\bigcard}[1]{\bigl|#1\bigr|}
@@ -707,17 +708,54 @@ The lexicographic order is not in general a well-ordering. For example, consider
 \end{rmk}
 
 \begin{exer}[5.5]
-ZF + ZL implies AC.
+ZF~+~ZL implies~AC.
 \end{exer}
 \begin{proof}
 If \(C\)~is a set of nonempty sets, let \(P\)~be the set of ``partial'' choice functions for~\(C\) partially ordered by inclusion: \(f:S\to\bigunion C\) with \(S\subset C\) and \(f(X)\in X\) for all \(X\in S\). Then \(\emptyset\in P\) and every chain in~\(P\) has its union as an upper bound. By ZL, there is a maximal element \(F\in P\). Now \(\dom F=X\), lest \(F\)~can be properly extended and is not maximal, so \(F\)~is a choice function for~\(C\).
 \end{proof}
 
 \begin{exer}[5.6]
-ZF + CC implies that every infinite set has a countable subset.
+ZF~+~CC implies that every infinite set has a countable subset.
 \end{exer}
 \begin{proof}
 If \(X\)~is infinite, choose an injection \(f_n:n\to X\) for all \(n\in\N\) by~CC and recursively define \(g:\N\to X\) by \(g(n)=f_{2^n}(k)\) where \(k\)~is least such that \(f_{2^n}(k)\ne g(m)\) for all \(m<n\). Then \(g\)~is injective.
+\end{proof}
+
+\begin{exer}[5.7]
+ZF~+~DC implies~CC.
+\end{exer}
+\begin{proof}
+If \(C\)~is a countable set of nonempty sets, let \(n\mapsto C_n\in C\) be a bijection and assume without loss of generality that the~\(C_n\) are pairwise disjoint. (If they are not disjoint, replace them with~\(C_n\times\{n\}\).)
+
+Define a relation~\(E\) on \(A=\bigunion C\) by
+\[b\mathrel{E}a\iff(\exists n\in\N)(b\in C_{n+1}\land a\in C_n)\]
+Note \(A\)~is nonempty and for every \(a\in A\) there is \(b\in A\) with \(b\mathrel{E}a\) since the~\(C_n\) are nonempty. By~DC, there is a sequence \(a_0,a_1,\ldots\in A\) with \(a_{n+1}\mathrel{E}a_n\) for all \(n\in\N\). By definition of~\(E\) and disjointness of the~\(C_n\), there is \(m\in\N\) such that \(a_n\in C_{n+m}\) for all \(n\in\N\). For \(0\le n<m\), choose \(a_{n-m}\in C_n\).\footnote{This does not require an axiom of choice since it involves only finitely many choices.} Then \(C_n\mapsto a_{n-m}\) (\(n\in\N\)) is a choice function for~\(C\).
+\end{proof}
+
+\begin{exer}[5.11]
+\(\prod_{0<n<\omega}n=2^{\aleph_0}\).
+\end{exer}
+\begin{proof}
+By Lemmas 5.9 and~5.6,
+\[\prod_{0<n<\omega}n=(\sup_{0<n<\omega}n\ )^{\aleph_0}=\aleph_0^{\aleph_0}=2^{\aleph_0}\qedhere\]
+\end{proof}
+
+\begin{exer}[5.13]
+\(\prod_{\alpha<\omega+\omega}\aleph_{\alpha}=\aleph_{\omega+\omega}^{\aleph_0}\)
+\end{exer}
+\begin{proof}
+By (5.16) and Lemma~5.9,
+\[\prod_{\alpha<\omega+\omega}\aleph_{\alpha}=\prod_{n<\omega}\aleph_n\mult\prod_{n<\omega}\aleph_{\omega+n}=\aleph_{\omega}^{\aleph_0}\mult\aleph_{\omega+\omega}^{\aleph_0}=\aleph_{\omega+\omega}^{\aleph_0}\qedhere\]
+\end{proof}
+
+\begin{exer}[5.14]
+If GCH holds, then (i) \(2^{<\kappa}=\kappa\) for infinite~\(\kappa\) and (ii) \(\kappa^{<\kappa}=\kappa\) for regular~\(\kappa\).
+\end{exer}
+\begin{proof}
+For~(i),
+\[2^{<\kappa}=\sup\{\,2^\mu\mid\mu<\kappa\,\}=\sup\{\,\csuc{\mu}\mid\mu<\kappa\,\}=\kappa\]
+For~(ii), by Theorem~5.15,
+\[\kappa^{<\kappa}=\sup\{\,\kappa^\mu\mid\mu<\kappa\,\}=\sup\{\,\kappa\mid\mu<\kappa\,\}=\kappa\qedhere\]
 \end{proof}
 
 % References
