@@ -758,6 +758,32 @@ For~(ii), by Theorem~5.15,
 \[\kappa^{<\kappa}=\sup\{\,\kappa^\mu\mid\mu<\kappa\,\}=\sup\{\,\kappa\mid\mu<\kappa\,\}=\kappa\qedhere\]
 \end{proof}
 
+\begin{exer}[5.17]
+If \(\kappa\)~is infinite and \(0<\lambda<\cf\kappa\), then \(\kappa^{\lambda}=\sum_{\alpha<\kappa}\card{\alpha}^{\lambda}\).
+\end{exer}
+\begin{proof}
+Since \(\kappa^{\lambda}=\bigunion_{\alpha<\kappa}\alpha^{\lambda}\) (Lemma~3.9(ii)),
+\[\kappa^{\lambda}=\bigcard{\bigunion_{\alpha<\kappa}\alpha^{\lambda}}\le\sum_{\alpha<\kappa}\card{\alpha}^{\lambda}\le\kappa\mult\kappa^{\lambda}=\kappa^{\lambda}\qedhere\]
+\end{proof}
+
+\begin{exer}[5.18]
+\(\aleph_{\omega}^{\aleph_1}=\aleph_{\omega}^{\aleph_0}\mult 2^{\aleph_1}\).
+\end{exer}
+\begin{proof}
+By Exercise~5.19, taking \(\alpha=\omega\).
+\end{proof}
+
+\begin{exer}[5.19]
+If \(\alpha<\omega_1\), then \(\aleph_{\alpha}^{\aleph_1}=\aleph_{\alpha}^{\aleph_0}\mult 2^{\aleph_1}\).
+\end{exer}
+\begin{proof}
+By induction on~\(\alpha\). If \(\alpha=0\), then \(\aleph_{\alpha}^{\aleph_1}=2^{\aleph_1}=\aleph_{\alpha}^{\aleph_0}\mult 2^{\aleph_1}\) (Lemma~5.6). If the result holds for~\(\alpha\), then by the Hausdorff formula~(5.22),
+\[\aleph_{\alpha+1}^{\aleph_1}=\aleph_{\alpha}^{\aleph_1}\mult\aleph_{\alpha+1}=\aleph_{\alpha}^{\aleph_0}\mult\aleph_{\alpha+1}\mult 2^{\aleph_1}=\aleph_{\alpha+1}^{\aleph_0}\mult 2^{\aleph_1}\]
+so the result holds for~\(\alpha+1\). If \(\alpha>0\) is a limit ordinal and the result holds for all \(\xi<\alpha\), then \(\cf\aleph_{\alpha}=\cf\alpha=\aleph_0\) and (Lemma~5.19)
+\[\aleph_{\alpha}^{\aleph_1}=\bigl(\lim_{\xi\to\alpha}\aleph_{\xi}^{\aleph_1}\bigr)^{\aleph_0}=\bigl(\lim_{\xi\to\alpha}(\aleph_{\xi}^{\aleph_0}\mult 2^{\aleph_1})\bigr)^{\aleph_0}\le\bigl(\aleph_{\alpha}^{\aleph_0}\mult 2^{\aleph_1}\bigr)^{\aleph_0}=\aleph_{\alpha}^{\aleph_0}\mult 2^{\aleph_1}\le\aleph_{\alpha}^{\aleph_1}\]
+so the result holds for~\(\alpha\).
+\end{proof}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{abbott} Abbott, Stephen. \textit{Understanding Analysis}. Springer, 2001.
