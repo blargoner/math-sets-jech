@@ -14,6 +14,8 @@
 \newcommand{\B}{\mathcal{B}}
 \newcommand{\CC}{\mathcal{C}}
 \newcommand{\Gd}{G_{\delta}}
+\newcommand{\al}{\aleph}
+\newcommand{\alo}{\al_{\omega}}
 
 \newcommand{\union}{\cup}
 \newcommand{\bigunion}{\bigcup}
@@ -397,7 +399,7 @@ b_0&=\text{least in }B\\
 b_{n+1}&=\text{least in }B-\{b_0,\ldots,b_n\}\text{ (nonempty since \(B\)~is infinite)}
 \end{align*}
 Let \(C=\{\,b_n\mid n\in\N\,\}\), which is countable since \(n\mapsto b_n\) is a bijection. If \(B\ne C\), let \(b\)~be least in \(B-C\). There are only finitely many elements of~\(B\) less than~\(b\) (Exercise~3.1(i)), which must be \(b_0,\ldots,b_k\) for some \(k\in\N\) by hypothesis. But then \(b\)~is least in \(B-\{b_0,\ldots,b_k\}\), so \(b=b_{k+1}\in C\), which contradicts \(b\not\in C\). Therefore \(B=C\). The result follows.
-\item[(ii)] Similar to the proof of Exercise~3.1(ii), replacing \(m\) and~\(n\) with~\(\aleph_0\) and using the fact that \(\aleph_0\le\card{A\union B}\le\aleph_0+\aleph_0=\aleph_0\) (Theorem 3.5).
+\item[(ii)] Similar to the proof of Exercise~3.1(ii), replacing \(m\) and~\(n\) with~\(\al_0\) and using the fact that \(\al_0\le\card{A\union B}\le\al_0+\al_0=\al_0\) (Theorem 3.5).
 \item[(iii)] Similar to the proof of Exercise~3.1(iv), replacing~\(n\) with~\(\N\).\qedhere
 \end{enumerate}
 \end{proof}
@@ -425,10 +427,10 @@ is injective, where \(p_k\)~is the \(k\)-th prime.
 \end{proof}
 
 \begin{exer}[3.7]
-If \(B\)~is a projection of~\(\omega_{\alpha}\), then \(\card{B}\le\aleph_{\alpha}\).
+If \(B\)~is a projection of~\(\omega_{\alpha}\), then \(\card{B}\le\al_{\alpha}\).
 \end{exer}
 \begin{proof}
-If \(f:\omega_{\alpha}\to B\) is surjective, define \(g:B\to\omega_{\alpha}\) by letting \(g(b)\)~be the least \(\beta\in\omega_{\alpha}\) such that \(f(\beta)=b\). Then \(g\)~is injective, so \(\card{B}\le\aleph_{\alpha}\).
+If \(f:\omega_{\alpha}\to B\) is surjective, define \(g:B\to\omega_{\alpha}\) by letting \(g(b)\)~be the least \(\beta\in\omega_{\alpha}\) such that \(f(\beta)=b\). Then \(g\)~is injective, so \(\card{B}\le\al_{\alpha}\).
 \end{proof}
 
 \begin{exer}[3.9]
@@ -448,14 +450,14 @@ If \(X\subset\omega_{\alpha}\), then \(\type X\le\omega_{\alpha}\) by a remark a
 \end{proof}
 
 \begin{exer}[3.11]
-\(\aleph_{\alpha+1}<2^{2^{\aleph_{\alpha}}}\)
+\(\al_{\alpha+1}<2^{2^{\al_{\alpha}}}\)
 \end{exer}
 \begin{proof}
-\(\aleph_{\alpha+1}<2^{\aleph_{\alpha+1}}\le 2^{2^{\aleph_{\alpha}}}\), where the first inequality follows from Theorem~3.1 and the second inequality follows from Exercises~3.9--10.
+\(\al_{\alpha+1}<2^{\al_{\alpha+1}}\le 2^{2^{\al_{\alpha}}}\), where the first inequality follows from Theorem~3.1 and the second inequality follows from Exercises~3.9--10.
 \end{proof}
 
 \begin{exer}[3.12]
-If \(\aleph_{\alpha}\)~is an uncountable limit cardinal, then \(\cf\omega_{\alpha}=\cf\alpha\); also, \(\omega_{\alpha}\)~is the limit of a cofinal sequence \(\seq{\,\omega_{\alpha_{\xi}}\mid\xi<\cf\alpha\,}\) of cardinals.\footnote{The second part of the exercise in the book is incorrect. For example, \(\omega_{\omega+\omega}\)~is not the limit of a cofinal sequence \(\seq{\,\omega_n\mid n<\omega\,}\).}
+If \(\al_{\alpha}\)~is an uncountable limit cardinal, then \(\cf\omega_{\alpha}=\cf\alpha\); also, \(\omega_{\alpha}\)~is the limit of a cofinal sequence \(\seq{\,\omega_{\alpha_{\xi}}\mid\xi<\cf\alpha\,}\) of cardinals.\footnote{The second part of the exercise in the book is incorrect. For example, \(\omega_{\omega+\omega}\)~is not the limit of a cofinal sequence \(\seq{\,\omega_n\mid n<\omega\,}\).}
 \end{exer}
 \begin{proof}
 By Lemma~3.7(ii) and its proof, since \(\omega_{\alpha}=\lim_{\xi\to\alpha}\omega_{\xi}\).
@@ -465,7 +467,7 @@ By Lemma~3.7(ii) and its proof, since \(\omega_{\alpha}=\lim_{\xi\to\alpha}\omeg
 (ZF) \(\omega_2\)~is not a countable union of countable sets.
 \end{exer}
 \begin{proof}
-If \(\omega_2=\bigunion_{n<\omega} S_n\) where each~\(S_n\) is countable, let \(\alpha_n=\type S_n<\omega_1\). Then \(\alpha=\sup_n\alpha_n\le\omega_1\). For \((n,\xi)\in\omega\times\alpha\), let \(f(n,\xi)\)~be the \(\xi\)-th element of~\(S_n\) if \(\xi\in\alpha_n\) or the first element of~\(S_n\) if \(\xi\not\in\alpha_n\). Then \(f:\omega\times\alpha\to\omega_2\) is surjective. But \(0<\card{\omega\times\alpha}\le\aleph_0\mult\aleph_1=\aleph_1\), so \(\omega_2\)~is a projection of~\(\omega_1\) and \(\aleph_2\le\aleph_1\)---contradicting \(\aleph_1<\aleph_2\). Therefore \(\omega_2\)~is not a countable union of countable sets.
+If \(\omega_2=\bigunion_{n<\omega} S_n\) where each~\(S_n\) is countable, let \(\alpha_n=\type S_n<\omega_1\). Then \(\alpha=\sup_n\alpha_n\le\omega_1\). For \((n,\xi)\in\omega\times\alpha\), let \(f(n,\xi)\)~be the \(\xi\)-th element of~\(S_n\) if \(\xi\in\alpha_n\) or the first element of~\(S_n\) if \(\xi\not\in\alpha_n\). Then \(f:\omega\times\alpha\to\omega_2\) is surjective. But \(0<\card{\omega\times\alpha}\le\al_0\mult\al_1=\al_1\), so \(\omega_2\)~is a projection of~\(\omega_1\) and \(\al_2\le\al_1\)---contradicting \(\al_1<\al_2\). Therefore \(\omega_2\)~is not a countable union of countable sets.
 \end{proof}
 
 \begin{exer}[3.14]
@@ -536,9 +538,9 @@ In Theorem~4.4, property~(iii) of a Dedekind cut is not needed for this purely o
 The set of all continuous functions \(f:\R\to\R\) has cardinality~\(\cc\), while \(\card{\R^{\R}}=2^{\cc}\).
 \end{exer}
 \begin{proof}
-By definition \(\card{\R^{\R}}=\cc^{\cc}\), and \(2^{\cc}\le\cc^{\cc}\le(2^{\cc})^{\cc}=2^{\cc\mult\cc}=2^{\cc}\) since \(\cc\mult\cc=2^{\aleph_0}\mult 2^{\aleph_0}=2^{\aleph_0+\aleph_0}=2^{\aleph_0}=\cc\).
+By definition \(\card{\R^{\R}}=\cc^{\cc}\), and \(2^{\cc}\le\cc^{\cc}\le(2^{\cc})^{\cc}=2^{\cc\mult\cc}=2^{\cc}\) since \(\cc\mult\cc=2^{\al_0}\mult 2^{\al_0}=2^{\al_0+\al_0}=2^{\al_0}=\cc\).
 
-There are at least~\(\cc\) continuous functions since the constant functions are continuous. Conversely, there are at most~\(\cc\) since a continuous function on~\(\R\) is determined by its values on the dense subset~\(\Q\), so the mapping \(f\mapsto f\restriction\Q\) is injective, and \(\card{\R^{\Q}}=\cc^{\aleph_0}=(2^{\aleph_0})^{\aleph_0}=2^{\aleph_0\mult\aleph_0}=2^{\aleph_0}=\cc\).
+There are at least~\(\cc\) continuous functions since the constant functions are continuous. Conversely, there are at most~\(\cc\) since a continuous function on~\(\R\) is determined by its values on the dense subset~\(\Q\), so the mapping \(f\mapsto f\restriction\Q\) is injective, and \(\card{\R^{\Q}}=\cc^{\al_0}=(2^{\al_0})^{\al_0}=2^{\al_0\mult\al_0}=2^{\al_0}=\cc\).
 \end{proof}
 
 \begin{exer}[4.3]
@@ -571,7 +573,7 @@ The set of all open sets of reals has cardinality~\(\cc\).
 \begin{proof}
 The set has cardinality at least~\(\cc\) since \(r\mapsto(r,r+1)\) is injective. The set has cardinality at most~\(\cc\) since the mapping
 \[O\mapsto\{\,(p,q)\in\Q\times\Q\mid\text{the interval }(p,q)\subset O\,\}\]
-for open sets~\(O\) is injective by density of~\(\Q\) in~\(\R\), and \(\card{\P(\Q\times\Q)}=2^{\aleph_0}=\cc\).
+for open sets~\(O\) is injective by density of~\(\Q\) in~\(\R\), and \(\card{\P(\Q\times\Q)}=2^{\al_0}=\cc\).
 \end{proof}
 
 \begin{exer}[4.7]
@@ -680,7 +682,7 @@ If \(X\)~is infinite and \(S\)~is the set of finite subsets of~\(X\), then \(\ca
 \end{exer}
 \begin{proof}
 \(\card{X}\le\card{S}\) since \(x\mapsto\{x\}\) is injective. Conversely, \(S\)~is the projection of the set \(X^{<\omega}=\bigunion_{n<\omega}X^n\) of finite sequences in~\(X\) under the mapping which takes each sequence to its underlying set. Therefore (by~(5.2))
-\[\card{S}\le\card{X^{<\omega}}=\sum_{n<\omega}\card{X}^n=\aleph_0\mult\card{X}=\card{X}\qedhere\]
+\[\card{S}\le\card{X^{<\omega}}=\sum_{n<\omega}\card{X}^n=\al_0\mult\card{X}=\card{X}\qedhere\]
 \end{proof}
 \begin{rmk}
 This generalizes Exercise~3.4(ii).
@@ -694,7 +696,7 @@ Call \(S\subset P\) \emph{cofinal} in~\(P\) if for all \(x\in P\) there is \(y\i
 \[x_{\alpha}=F(\{\,x_{\xi}\mid\xi<\alpha\,\})\quad\text{if }\{\,x_{\xi}\mid\xi<\alpha\,\}\text{ is not cofinal in~\(P\)}\]
 Let \(\theta\)~be the least ordinal at which the recursion cannot continue. If \(\theta=0\), then the result is trivial. If \(\theta=\alpha+1\), then \(x_{\alpha}\)~is greatest in~\(P\), so \(P=P(x_{\alpha})\union\{x_{\alpha}\}\) and \(\card{P}\le\kappa\). If \(\theta>0\) is a limit ordinal, then
 \[P=\bigunion_{\alpha<\theta}P(x_{\alpha})\]
-Also \(\aleph_0\le\card{\theta}\le\kappa\), lest \(\card{P(x_{\kappa+1})}\ge\kappa\). Therefore \(\card{P}\le\kappa\mult\kappa=\kappa\).
+Also \(\al_0\le\card{\theta}\le\kappa\), lest \(\card{P(x_{\kappa+1})}\ge\kappa\). Therefore \(\card{P}\le\kappa\mult\kappa=\kappa\).
 \end{proof}
 
 \begin{exer}[5.4]
@@ -733,19 +735,19 @@ Note \(A\)~is nonempty and for every \(a\in A\) there is \(b\in A\) with \(b\mat
 \end{proof}
 
 \begin{exer}[5.11]
-\(\prod_{0<n<\omega}n=2^{\aleph_0}\).
+\(\prod_{0<n<\omega}n=2^{\al_0}\).
 \end{exer}
 \begin{proof}
 By Lemmas 5.9 and~5.6,
-\[\prod_{0<n<\omega}n=(\sup_{0<n<\omega}n\ )^{\aleph_0}=\aleph_0^{\aleph_0}=2^{\aleph_0}\qedhere\]
+\[\prod_{0<n<\omega}n=(\sup_{0<n<\omega}n\ )^{\al_0}=\al_0^{\al_0}=2^{\al_0}\qedhere\]
 \end{proof}
 
 \begin{exer}[5.13]
-\(\prod_{\alpha<\omega+\omega}\aleph_{\alpha}=\aleph_{\omega+\omega}^{\aleph_0}\)
+\(\prod_{\alpha<\omega+\omega}\al_{\alpha}=\al_{\omega+\omega}^{\al_0}\)
 \end{exer}
 \begin{proof}
 By (5.16) and Lemma~5.9,
-\[\prod_{\alpha<\omega+\omega}\aleph_{\alpha}=\prod_{n<\omega}\aleph_n\mult\prod_{n<\omega}\aleph_{\omega+n}=\aleph_{\omega}^{\aleph_0}\mult\aleph_{\omega+\omega}^{\aleph_0}=\aleph_{\omega+\omega}^{\aleph_0}\qedhere\]
+\[\prod_{\alpha<\omega+\omega}\al_{\alpha}=\prod_{n<\omega}\al_n\mult\prod_{n<\omega}\al_{\omega+n}=\alo^{\al_0}\mult\al_{\omega+\omega}^{\al_0}=\al_{\omega+\omega}^{\al_0}\qedhere\]
 \end{proof}
 
 \begin{exer}[5.14]
@@ -767,20 +769,20 @@ Since \(\kappa^{\lambda}=\bigunion_{\alpha<\kappa}\alpha^{\lambda}\) (Lemma~3.9(
 \end{proof}
 
 \begin{exer}[5.18]
-\(\aleph_{\omega}^{\aleph_1}=\aleph_{\omega}^{\aleph_0}\mult 2^{\aleph_1}\).
+\(\alo^{\al_1}=\alo^{\al_0}\mult 2^{\al_1}\).
 \end{exer}
 \begin{proof}
 By Exercise~5.19, taking \(\alpha=\omega\).
 \end{proof}
 
 \begin{exer}[5.19]
-If \(\alpha<\omega_1\), then \(\aleph_{\alpha}^{\aleph_1}=\aleph_{\alpha}^{\aleph_0}\mult 2^{\aleph_1}\).
+If \(\alpha<\omega_1\), then \(\al_{\alpha}^{\al_1}=\al_{\alpha}^{\al_0}\mult 2^{\al_1}\).
 \end{exer}
 \begin{proof}
-By induction on~\(\alpha\). If \(\alpha=0\), then \(\aleph_{\alpha}^{\aleph_1}=2^{\aleph_1}=\aleph_{\alpha}^{\aleph_0}\mult 2^{\aleph_1}\) (Lemma~5.6). If the result holds for~\(\alpha\), then by the Hausdorff formula~(5.22),
-\[\aleph_{\alpha+1}^{\aleph_1}=\aleph_{\alpha}^{\aleph_1}\mult\aleph_{\alpha+1}=\aleph_{\alpha}^{\aleph_0}\mult\aleph_{\alpha+1}\mult 2^{\aleph_1}=\aleph_{\alpha+1}^{\aleph_0}\mult 2^{\aleph_1}\]
-so the result holds for~\(\alpha+1\). If \(\alpha>0\) is a limit ordinal and the result holds for all \(\xi<\alpha\), then \(\cf\aleph_{\alpha}=\cf\alpha=\aleph_0\) and (Lemma~5.19)
-\[\aleph_{\alpha}^{\aleph_1}=\bigl(\lim_{\xi\to\alpha}\aleph_{\xi}^{\aleph_1}\bigr)^{\aleph_0}=\bigl(\lim_{\xi\to\alpha}(\aleph_{\xi}^{\aleph_0}\mult 2^{\aleph_1})\bigr)^{\aleph_0}\le\bigl(\aleph_{\alpha}^{\aleph_0}\mult 2^{\aleph_1}\bigr)^{\aleph_0}=\aleph_{\alpha}^{\aleph_0}\mult 2^{\aleph_1}\le\aleph_{\alpha}^{\aleph_1}\]
+By induction on~\(\alpha\). If \(\alpha=0\), then \(\al_{\alpha}^{\al_1}=2^{\al_1}=\al_{\alpha}^{\al_0}\mult 2^{\al_1}\) (Lemma~5.6). If the result holds for~\(\alpha\), then by the Hausdorff formula~(5.22),
+\[\al_{\alpha+1}^{\al_1}=\al_{\alpha}^{\al_1}\mult\al_{\alpha+1}=\al_{\alpha}^{\al_0}\mult\al_{\alpha+1}\mult 2^{\al_1}=\al_{\alpha+1}^{\al_0}\mult 2^{\al_1}\]
+so the result holds for~\(\alpha+1\). If \(\alpha>0\) is a limit ordinal and the result holds for all \(\xi<\alpha\), then \(\cf\al_{\alpha}=\cf\alpha=\al_0\) and (Lemma~5.19)
+\[\al_{\alpha}^{\al_1}=\bigl(\lim_{\xi\to\alpha}\al_{\xi}^{\al_1}\bigr)^{\al_0}=\bigl(\lim_{\xi\to\alpha}(\al_{\xi}^{\al_0}\mult 2^{\al_1})\bigr)^{\al_0}\le\bigl(\al_{\alpha}^{\al_0}\mult 2^{\al_1}\bigr)^{\al_0}=\al_{\alpha}^{\al_0}\mult 2^{\al_1}\le\al_{\alpha}^{\al_1}\]
 so the result holds for~\(\alpha\).
 \end{proof}
 
