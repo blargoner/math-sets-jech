@@ -16,6 +16,7 @@
 \newcommand{\Gd}{G_{\delta}}
 \newcommand{\al}{\aleph}
 \newcommand{\alo}{\al_{\omega}}
+\newcommand{\aloo}{\al_{\omega_1}}
 
 \newcommand{\union}{\cup}
 \newcommand{\bigunion}{\bigcup}
@@ -784,6 +785,38 @@ By induction on~\(\alpha\). If \(\alpha=0\), then \(\al_{\alpha}^{\al_1}=2^{\al_
 so the result holds for~\(\alpha+1\). If \(\alpha>0\) is a limit ordinal and the result holds for all \(\xi<\alpha\), then \(\cf\al_{\alpha}=\cf\alpha=\al_0\) and (Lemma~5.19)
 \[\al_{\alpha}^{\al_1}=\bigl(\lim_{\xi\to\alpha}\al_{\xi}^{\al_1}\bigr)^{\al_0}=\bigl(\lim_{\xi\to\alpha}(\al_{\xi}^{\al_0}\mult 2^{\al_1})\bigr)^{\al_0}\le\bigl(\al_{\alpha}^{\al_0}\mult 2^{\al_1}\bigr)^{\al_0}=\al_{\alpha}^{\al_0}\mult 2^{\al_1}\le\al_{\alpha}^{\al_1}\]
 so the result holds for~\(\alpha\).
+\end{proof}
+
+\begin{exer}[5.24]
+If \(2^{\al_0}\ge\alo\), then \(\alo^{\al_0}=2^{\al_0}\).
+\end{exer}
+\begin{proof}
+By Theorem~5.20(ii).
+\end{proof}
+\begin{rmk}
+\(2^{\al_0}\ne\alo\) by K\"onig's theorem (Corollary~5.12).
+\end{rmk}
+
+\begin{exer}[5.25]
+If \(2^{\al_1}=\al_2\) and \(\alo^{\al_0}\ge\aloo\), then \(\aloo^{\al_1}=\alo^{\al_0}\).
+\end{exer}
+\begin{proof}
+By Exercise~5.18,
+\[\alo^{\al_0}\le\aloo^{\al_1}\le(\alo^{\al_0})^{\al_1}=\alo^{\al_1}=\alo^{\al_0}\mult 2^{\al_1}=\alo^{\al_0}\mult\aleph_2=\alo^{\al_0}\qedhere\]
+\end{proof}
+
+\begin{exer}[5.26]
+If \(2^{\al_0}\ge\aloo\), then \(\gimel(\alo)=2^{\al_0}\) and \(\gimel(\aloo)=2^{\al_1}\).
+\end{exer}
+\begin{proof}
+By Theorem~5.20(ii).
+\end{proof}
+
+\begin{exer}[5.27]
+If \(2^{\al_1}=\al_2\), then \(\alo^{\al_0}\ne\aloo\).
+\end{exer}
+\begin{proof}
+If \(\alo^{\al_0}=\aloo\), then \(\aloo^{\al_1}=\aloo\) (Exercise~5.25), which contradicts K\"onig's theorem (Corollary~5.14).
 \end{proof}
 
 % References
