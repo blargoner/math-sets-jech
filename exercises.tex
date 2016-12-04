@@ -855,6 +855,24 @@ If \(2^{\al_1}=\al_2\), then \(\alo^{\al_0}\ne\aloo\).
 If \(\alo^{\al_0}=\aloo\), then \(\aloo^{\al_1}=\aloo\) (Exercise~5.25), which contradicts K\"onig's theorem (Corollary~5.14).
 \end{proof}
 
+\begin{rmk}
+The next few exercises explore the behavior of the gimel function at singular cardinals.
+\end{rmk}
+
+\begin{exer}[5.28]
+If \(\kappa\le\gimel(\lambda)\) and \(\cf\kappa\le\cf\lambda\), then \(\gimel(\kappa)\le\gimel(\lambda)\).
+\end{exer}
+\begin{proof}
+\[\gimel(\kappa)=\kappa^{\cf\kappa}\le\gimel(\lambda)^{\cf\kappa}=(\lambda^{\cf\lambda})^{\cf\kappa}=\lambda^{\cf\lambda\mult\cf\kappa}=\lambda^{\cf\lambda}=\gimel(\lambda)\qedhere\]
+\end{proof}
+
+\begin{exer}[5.29]
+If \(\kappa\)~is singular and \(2^{\cf\kappa}<\kappa\le\lambda^{\cf\kappa}\) for some \(\lambda<\kappa\), then \(\gimel(\kappa)=\gimel(\lambda)\) where \(\lambda\)~is least such that \(\kappa\le\lambda^{\cf\kappa}\).
+\end{exer}
+\begin{proof}
+By Theorem~5.20. \(\gimel(\kappa)=\kappa^{\cf\kappa}=\lambda^{\cf\kappa}\), so it suffices to prove that \(\lambda^{\cf\kappa}=\lambda^{\cf\lambda}=\gimel(\lambda)\). If \(\lambda\le\cf\kappa\), then \(\lambda^{\cf\kappa}=2^{\cf\kappa}<\kappa\le\lambda^{\cf\kappa}\)---a contradiction. If there is \(\mu<\lambda\le\mu^{\cf\kappa}\), then \(\kappa\le\lambda^{\cf\kappa}=\mu^{\cf\kappa}\)---a contradiction since \(\lambda\)~is least with this property. If \(\cf\kappa<\cf\lambda\), then \(\lambda^{\cf\kappa}=\lambda<\kappa\)---a contradiction. Thus \(\lambda^{\cf\kappa}=\lambda^{\cf\lambda}\).
+\end{proof}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{abbott} Abbott, Stephen. \textit{Understanding Analysis}. Springer, 2001.
