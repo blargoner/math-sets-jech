@@ -873,6 +873,15 @@ If \(\kappa\)~is singular and \(2^{\cf\kappa}<\kappa\le\lambda^{\cf\kappa}\) for
 By Theorem~5.20. \(\gimel(\kappa)=\kappa^{\cf\kappa}=\lambda^{\cf\kappa}\), so it suffices to prove that \(\lambda^{\cf\kappa}=\lambda^{\cf\lambda}=\gimel(\lambda)\). If \(\lambda\le\cf\kappa\), then \(\lambda^{\cf\kappa}=2^{\cf\kappa}<\kappa\le\lambda^{\cf\kappa}\)---a contradiction. If there is \(\mu<\lambda\le\mu^{\cf\kappa}\), then \(\kappa\le\lambda^{\cf\kappa}=\mu^{\cf\kappa}\)---a contradiction since \(\lambda\)~is least with this property. If \(\cf\kappa<\cf\lambda\), then \(\lambda^{\cf\kappa}=\lambda<\kappa\)---a contradiction. Thus \(\lambda^{\cf\kappa}=\lambda^{\cf\lambda}\).
 \end{proof}
 
+\section*{Chapter~6}
+\begin{rmk}
+In the proof of Theorem~6.5, to see that \(F\)~is the unique function on~\(T\) satisfying~(6.6), first observe that if \(F(x)=y_1\) and \(F(x)=y_2\) are witnessed by \(f_1\) and~\(f_2\), respectively, then \(D=\dom f_1\sect\dom f_2\)~is transitive and \(f_1(z)=f_2(z)\) for all \(z\in D\) by \(\in\)-induction on~\(D\), so in particular \(y_1=f_1(x)=f_2(x)=y_2\). It follows that \(F\)~is a function, and if \(x\in\dom F\) then there is a unique witnessing function~\(f_x\) with smallest domain.
+
+If \(x\subset\dom F\), let \(f=\bigunion_{w\in x}f_w\).\footnote{The set \(\{\,f_w\mid w\in x\,\}\) exists by replacement.} Then \(f\)~is a function by \(\in\)-induction as above, \(\dom f=\bigunion_{w\in x}\dom f_w\) is transitive with \(x\subset\dom f\), and \(f(z)=G(f\restriction z)\) for all \(z\in\dom f\). Thus \(f\union\{(x,G(f\restriction x))\}\) witnesses \(F(x)=G(f\restriction x)\), and \(x\in\dom F\). By \(\in\)-induction, it follows that \(\dom F=T\).
+
+Now \(F(x)=f_x(x)=G(f_x\restriction x)=G(F\restriction x)\), so \(F\)~satisfies~(6.6). Finally, if \(F'\)~also satisfies~(6.6), then \(F=F'\) by \(\in\)-induction, so \(F\)~is unique.
+\end{rmk}
+
 % References
 \begin{thebibliography}{0}
 \bibitem{abbott} Abbott, Stephen. \textit{Understanding Analysis}. Springer, 2001.
