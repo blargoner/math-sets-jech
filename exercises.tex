@@ -4,6 +4,7 @@
 \usepackage{amsmath,amssymb,amsthm,enumitem,fourier}
 
 \newcommand{\N}{\boldsymbol{N}}
+\newcommand{\Z}{\boldsymbol{Z}}
 \newcommand{\Q}{\boldsymbol{Q}}
 \newcommand{\I}{\boldsymbol{I}}
 \newcommand{\R}{\boldsymbol{R}}
@@ -18,6 +19,8 @@
 \newcommand{\alo}{\al_{\omega}}
 \newcommand{\aloo}{\al_{\omega_1}}
 
+\newcommand{\subclass}{\subset}
+
 \newcommand{\union}{\cup}
 \newcommand{\bigunion}{\bigcup}
 \newcommand{\sect}{\cap}
@@ -29,6 +32,8 @@
 \DeclareMathOperator{\ran}{ran}
 \DeclareMathOperator{\type}{type}
 \DeclareMathOperator{\cf}{cf}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\tc}{TC}
 
 \newcommand{\suc}[1]{#1\union\{#1\}}
 \newcommand{\csuc}[1]{#1^+}
@@ -174,7 +179,7 @@ The previous two exercises show that (Cantor) finiteness is equivalent to Tarski
 
 \section*{Chapter~2}
 \begin{rmk}
-In~(2.1), \(<\)~is actually a \emph{well-ordering} on~\(\Ord\). Indeed, if \(C\subset\Ord\) is a nonempty class of ordinals and \(\alpha\in C\) is not \(\in\)-minimal in~\(C\), then \(\alpha\sect C\)~is a nonempty subset of~\(\alpha\) which has an \(\in\)-minimal element~\(\beta\). By transitivity of~\(\alpha\), \(\beta\)~is \(\in\)-minimal in~\(C\).
+In~(2.1), \(<\)~is actually a \emph{well-ordering} on~\(\Ord\). Indeed, if \(C\subclass\Ord\) is a nonempty class of ordinals and \(\alpha\in C\) is not \(\in\)-minimal in~\(C\), then \(\alpha\sect C\)~is a nonempty subset of~\(\alpha\) which has an \(\in\)-minimal element~\(\beta\). By transitivity of~\(\alpha\), \(\beta\)~is \(\in\)-minimal in~\(C\).
 
 This observation provides an alternative proof that \(\Ord\)~is a proper class: if \(\Ord\)~were a set, then because it is transitive and strictly well-ordered by~\(\in\), it would be an ordinal, and hence \(\Ord\in\Ord\)---contradicting strictness.
 \end{rmk}
@@ -701,10 +706,10 @@ Also \(\al_0\le\card{\theta}\le\kappa\), lest \(\card{P(x_{\kappa+1})}\ge\kappa\
 \end{proof}
 
 \begin{exer}[5.4]
-If \(A\)~can be well-ordered, then \(P(A)\)~can be linearly ordered.
+If \(A\)~can be well-ordered, then \(\P(A)\)~can be linearly ordered.
 \end{exer}
 \begin{proof}
-Identify \(P(A)\) with \(2^A\) and order \(2^A\) with the lexicographic order: \(f<g\) if \(f(x)<g(x)\) at the least \(x\in A\) where \(f(x)\ne g(x)\).
+Identify \(\P(A)\) with \(2^A\) and order \(2^A\) with the lexicographic order: \(f<g\) if \(f(x)<g(x)\) at the least \(x\in A\) where \(f(x)\ne g(x)\).
 \end{proof}
 \begin{rmk}
 The lexicographic order is not in general a well-ordering. For example, consider \(2^{\N}\)~and the subset \(2^{\N}-\{0\}\).
@@ -881,6 +886,79 @@ If \(x\subset\dom F\), let \(f=\bigunion_{w\in x}f_w\).\footnote{The set \(\{\,f
 
 Now \(F(x)=f_x(x)=G(f_x\restriction x)=G(F\restriction x)\), so \(F\)~satisfies~(6.6). Finally, if \(F'\)~also satisfies~(6.6), then \(F=F'\) by \(\in\)-induction, so \(F\)~is unique.
 \end{rmk}
+
+\begin{exer}[6.1]
+\(\rank(x)=\sup\{\,\rank(z)+1\mid z\in x\,\}\).
+\end{exer}
+\begin{proof}
+Let \(\sigma=\sup\{\,\rank(z)+1\mid z\in x\,\}\). If \(z\in x\), then \(\rank(z)<\rank(x)\), so that \(\rank(z)+1\le\rank(x)\). It follows that \(\sigma\le\rank(x)\). Conversely if \(\alpha<\rank(x)\), then by definition \(x\not\in V_{\alpha+1}=\P(V_{\alpha})\), so \(x\not\subset V_{\alpha}\), so there is \(z\in x\) with \(z\not\in V_{\alpha}\) and hence \(\alpha\le\rank(z)\) and \(\alpha<\rank(z)+1\le\sigma\). Since \(\rank(x)\)~is least greater than all \(\alpha<\rank(x)\), it follows that \(\rank(x)\le\sigma\).
+\end{proof}
+
+\begin{exer}[6.2]
+\(\card{V_{\omega+\alpha}}=\beth_{\alpha}\) for all~\(\alpha\).
+\end{exer}
+\begin{proof}
+By induction on~\(\alpha\). For \(\alpha=0\), we have \(\omega\subset V_{\omega}\) and \(V_n\)~is finite for all \(n<\omega\) by induction on~\(n\), so
+\[\aleph_0\le\card{V_{\omega}}=\bigcard{\bigunion_{n<\omega}V_n}\le\al_0=\beth_0\]
+If \(\card{V_{\omega+\alpha}}=\beth_{\alpha}\), then
+\[\card{V_{\omega+\alpha+1}}=\card{\P(V_{\omega+\alpha})}=2^{\card{V_{\omega+\alpha}}}=2^{\beth_{\alpha}}=\beth_{\alpha+1}\]
+If \(\alpha>0\) is limit and \(\card{V_{\omega+\beta}}=\beth_{\beta}\) for all \(\beta<\alpha\), then since \(V_{\omega+\beta}\subset V_{\omega+\alpha}\) for all \(\beta<\alpha\), we have \(\beth_{\beta}\le\card{V_{\omega+\alpha}}\) for all \(\beta<\alpha\) and \(\beth_{\alpha}=\sup\{\,\beth_{\beta}\mid\beta<\alpha\,\}\le\card{V_{\omega+\alpha}}\). Conversely,
+\[\card{V_{\omega+\alpha}}=\bigcard{\bigunion_{\beta<\alpha}V_{\omega+\beta}}\le\card{\alpha}\mult\sup\{\,\card{V_{\omega+\beta}}\mid\beta<\alpha\,\}=\card{\alpha}\mult\beth_{\alpha}=\beth_{\alpha}\qedhere\]
+\end{proof}
+
+\begin{exer}[6.3]
+If \(\kappa\)~is inaccessible, then \(\card{V_{\kappa}}=\kappa\).
+\end{exer}
+\begin{proof}
+\(\kappa\subset V_{\kappa}\), so \(\kappa\le\card{V_{\kappa}}\). Conversely, we claim \(\card{V_{\alpha}}<\kappa\) for \(\alpha<\kappa\). For \(\alpha<\omega\) this is trivial, and for \(\alpha=\omega+\beta\) with \(\beta<\kappa\) we have \(\card{V_{\alpha}}=\beth_{\beta}\) (Exercise~6.2) and \(\beth_{\beta}<\kappa\) by induction on~\(\beta\). Indeed, for \(\beta=0\) this holds since \(\kappa\)~is uncountable. If it holds for~\(\beta\) then it holds for~\(\beta+1\) since \(\kappa\)~is strong limit. If \(\beta>0\) is limit and it holds for all \(\gamma<\beta\), then it holds for~\(\beta\) since \(\kappa\)~is regular. Therefore
+\[\card{V_{\kappa}}=\bigcard{\bigunion_{\alpha<\kappa}V_{\alpha}}\le\kappa\mult\sup\{\,\card{V_{\alpha}}\mid\alpha<\kappa\,\}\le\kappa\mult\kappa=\kappa\qedhere\]
+\end{proof}
+
+\begin{exer}[6.4]
+If \(x\) and~\(y\) have rank~\(\le\alpha\), then
+\[\{x,y\}\quad (x,y)\quad x\union y\quad \bigunion x\quad \P(x)\quad x\times y\quad y^x\]
+each have rank~\(<\alpha+\omega\).
+\end{exer}
+\begin{proof}
+By assumption \(x,y\in V_{\alpha+1}=\P(V_{\alpha})\), so \(x,y\subset V_{\alpha}\).
+\begin{itemize}[itemsep=0pt]
+\item \(\{x,y\}\subset V_{\alpha+1}\), so \(\{x,y\}\in V_{\alpha+2}\) and \(\rank(\{x,y\})\le\alpha+1\).
+\item \((x,y)=\{\{x\},\{x,y\}\}\subset V_{\alpha+2}\), so \((x,y)\in V_{\alpha+3}\) and \(\rank((x,y))\le\alpha+2\).
+\item \(x\union y\subset V_{\alpha}\), so \(x\union y\in V_{\alpha+1}\) and \(\rank(x\union y)\le\alpha\).
+\item \(\bigunion x\subset V_{\alpha}\) by transitivity of~\(V_{\alpha}\), so \(\bigunion x\in V_{\alpha+1}\) and \(\rank(\bigunion x)\le\alpha\).
+\item \(\P(x)\subset V_{\alpha+1}\), so \(\P(x)\in V_{\alpha+2}\) and \(\rank(P(x))\le\alpha+1\).
+\item \(x\times y\subset V_{\alpha}\times V_{\alpha}\subset V_{\alpha+2}\), so \(x\times y\in V_{\alpha+3}\) and \(\rank(x\times y)\le\alpha+2\).
+\item \(y^x=\{\,f:x\to y\,\}\subset\P(x\times y)\subset V_{\alpha+3}\), so \(y^x\in V_{\alpha+4}\) and \(\rank(y^x)\le\alpha+3\).\qedhere
+\end{itemize}
+\end{proof}
+
+\begin{exer}[6.5]
+\(\Z,\Q,\R\in V_{\omega+\omega}\).
+\end{exer}
+\begin{proof}
+\(\N=\omega\subset V_{\omega}\). Under standard constructions:
+\begin{itemize}[itemsep=0pt]
+\item \(\Z\)~is a set of equivalence classes of pairs of elements of~\(\N\)
+\item \(\Q\)~is a set of equivalence classes of pairs of elements of~\(\Z\)
+\item \(\R\)~is a set of subsets (cuts) of~\(\Q\)
+\end{itemize}
+To reach each of these sets we must climb up only finitely many steps from~\(V_{\omega}\) in the cumulative hierarchy (see Exercise~6.4).
+\end{proof}
+
+\begin{exer}[6.6]
+If \(B\)~is the class of sets hereditarily in the class~\(A\), then
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] \(x\in B\) if and only if \(x\in A\) and \(\tc(x)\subset A\).\footnote{The requirement that \(x\in A\) is essential. For example, if \(A\)~is the class of finite sets, so \(B\)~is the class of hereditarily finite sets, then \(\tc(\omega)=\omega\subset A\) but \(\omega\not\in A\) so \(\omega\not\in B\).}
+\item[(ii)] \(B\)~is the largest transitive subclass of~\(A\).
+\end{enumerate}
+\end{exer}
+\begin{proof}
+Recall \(B=\{\,x\in A\mid x\subset B\,\}\).
+\begin{enumerate}[itemsep=0pt]
+\item[(i)] If \(x\in B\), then \(x\in A\). Let \(x_0=x\) and \(x_{n+1}=\bigunion x_n\) for all \(n<\omega\). Then \(x_n\subset B\) for all \(n<\omega\) by induction on~\(n\), and \(\tc(x)=\bigunion_{n<\omega}x_n\subset B\subclass A\). Conversely, if \(T=\tc(x)\union\{x\}\subset A\), then \(T\subset B\) by \(\in\)-induction on~\(T\), so \(x\in B\).
+\item[(ii)] By definition, \(B\subclass A\) is transitive. If \(C\subclass A\) is transitive and \(x\in C\), then \(\tc(x)\union\{x\}\subset C\subclass A\), so \(x\in B\) by~(i) and \(C\subclass B\).\qedhere
+\end{enumerate}
+\end{proof}
 
 % References
 \begin{thebibliography}{0}
